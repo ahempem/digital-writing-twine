@@ -9,7 +9,49 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Groundhog.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Groundhog" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="251D9AEA-2FC4-43F7-853E-3D6E44CCDEC4" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="600,275" size="100,100"></tw-passagedata></tw-storydata>
+<tw-storydata name="Groundhog" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="251D9AEA-2FC4-43F7-853E-3D6E44CCDEC4" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+tw-story {
+  font-family: "Architects Daughter", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.story-image {
+  width: 100%;
+}
+
+tw-link, tw-link:link, tw-link:visited, tw-link.visited {
+  color: #FFF;
+  text-decoration: underline;
+}
+tw-link:focus, tw-link:hover, tw-link:active, tw-link.visited:hover {
+  color: #FFF;
+  text-decoration: none;
+}
+tw-passage {
+  padding-bottom: 200px;}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="WAKE UP" tags="" position="400,100" size="100,100">A new day. A chance to reset and try again.
+ 
+(t8n-delay:2s) + (t8n: &quot;dissolve&quot;) [the first thing I do when I wake up is [[get out of bed]] although sometimes I want to [[go back to sleep]]]
+
+(char-style: via (t8n-delay: pos*60)+(t8n-delay:3s) +(t8n:&#39;dissolve&#39;))[maybe this time i&#39;ll get it right... do i need more sleep? do i not? how do i decide?]  </tw-passagedata><tw-passagedata pid="2" name="get out of bed" tags="" position="400,225" size="100,100">I haven&#39;t had enough sleep. Today will be terrible if I don&#39;t have a [[cold shower]] [[coffee]] 
+
+(char-style: via (t8n-delay:pos*70)+(t8n:&#39;dissolve&#39;)) [although both seem to be a bad call and i&#39;m not really sure if anything can help, but i suppose it&#39;s worth giving it a go i guess, but what if that doesn&#39;t work i better choose right it&#39;s time for met to shut up and choose god why can&#39;t i choose anything why can&#39;t i choose anything why can&#39;t i choose anything why can&#39;t i choose anything why can&#39;t i choose anything why can&#39;t i choose anything why can&#39;t i choose anything it&#39;s only a [[coffee]] or a [[cold shower]] they can&#39;t hurt me right?&#39;&#39;JUST SHUT UP AND CHOOSE&#39;&#39;...] 
+
+</tw-passagedata><tw-passagedata pid="3" name="go back to sleep" tags="" position="525,225" size="100,100">(if: visits is 1) [The first thing I do after waking up again is yawn and then finally get up - although, have I fucked it now? Should I just [[go back to sleep]] again?]
+(if:visits is 2)[The first thing I do after waking up for the second time is finally [[get out of bed]] [[go back to sleep]]]
+(if:visits is 3)[The first thing I do after waking up for the third fucking time is actually [[get out of bed]] and avoid the urge to [[go back to sleep]]]
+(if:visits is 4)[The first thing I do after waking up for the fourth time is  scream at myself, realise my life is fucked, and then  [[get out of bed]] [[go back to sleep]]]
+(if:visits is 5)[The first thing I do after waking up for the fifth fucking time is actually [[get out of bed]] [[go back to sleep]]]
+(if:visits is 6)[The first thing I do after waking up for the SIXTH fucking time is actually [[get out of bed]] [[go back to sleep]]]
+(if:visits is 7)[The first thing I do after waking up for the seventh fucking time is feel like some greater, evil force is controlling me to do this, but fight agaisnt it to actually [[get out of bed]] [[go back to sleep]]]
+(if:visits is 8)[The first thing I do after waking up for the eighth fucking time is recover from that nightmare about my family dying and then [[get out of bed]] [[go back to sleep]]]
+(if:visits is 9)[The first thing I do after waking up for the ninth time is feel more awful about myself than I ever have, then finally [[get out of bed]] and avoid the urge to give up on it all and [[go back to sleep]]]
+(if:visits is 10)[&quot;After I&#39;ve been back to sleep for the 10th time, I realise and accept I&#39;m a piece of shit who may never get up. I&#39;ll [[stay in my room for now.]]]</tw-passagedata><tw-passagedata pid="4" name="stay in my room for now." tags="" position="525,350" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="coffee" tags="" position="275,350" size="100,100">I drink a coffee. Why is my heart going so fast? Maybe I should try to [[journal]] [[make some food]] to calm down. 
+
+(t8n-delay: 5s) + (t8n: &quot;flicker&quot;) []  
+</tw-passagedata><tw-passagedata pid="6" name="journal" tags="" position="275,475" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="make some food" tags="" position="400,475" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="cold shower" tags="" position="400,350" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
