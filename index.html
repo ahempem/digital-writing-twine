@@ -51,9 +51,12 @@ tw-passage {
 max-width: 100%;
 height: auto;
 display: block;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="WAKE UP" tags="" position="400,100" size="100,100">A new day. A chance to reset and try again.
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="WAKE UP" tags="" position="400,100" size="100,100">&lt;audio src=&quot;./audio/magpie.mp3&quot; autoplay loop&gt; 
+&lt;/audio&gt;
+
+(t8n-delay:1s) + (t8n: &quot;dissolve&quot;) [A new day. A chance to reset and try again.]
  
-(t8n-delay:2s) + (t8n: &quot;dissolve&quot;) [the first thing you do when you wake up is [[get out of bed]] although sometimes you want to [[go back to sleep]]]
+(t8n-delay:2s) + (t8n: &quot;dissolve&quot;) [the first thing you do when you wake up is [[get out of bed]] although sometimes you want to [[go back to sleep]]].
 
 (char-style: via (t8n-delay: pos*60)+(t8n-delay:5s) +(t8n:&#39;dissolve&#39;))[maybe this time you&#39;ll get it right... do you need more sleep? do you not? how do you decide?]  </tw-passagedata><tw-passagedata pid="2" name="get out of bed" tags="" position="400,225" size="100,100">You haven&#39;t had enough sleep. Today will be terrible if you don&#39;t have a [[cold shower]] [[coffee]] 
 
