@@ -23,11 +23,11 @@ tw-story {
 }
 
 tw-link, tw-link:link, tw-link:visited, tw-link.visited {
-  color: #FFF;
+  color: black;
   text-decoration: underline;
 }
 tw-link:focus, tw-link:hover, tw-link:active, tw-link.visited:hover {
-  color: #FFF;
+  color: red;
   text-decoration: none;
 }
 tw-passage {
@@ -38,8 +38,8 @@ tw-passage {
   grid-template-columns: 50% 50%;  /* sets each column to 50% */
 }
 .story-text {
-  grid-column: 4;  /* sets which column the text appears in */
-  grid-row: 4;
+  grid-column: 3;  /* sets which column the text appears in */
+  grid-row: 1;
   box-sizing: border-box;
   padding: 10px;
 }
@@ -51,7 +51,29 @@ tw-passage {
 max-width: 100%;
 height: auto;
 display: block;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="WAKE UP" tags="" position="400,100" size="100,100">&lt;audio src=&quot;./audio/magpies.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
+}
+
+#cloudOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url ("./images/stairs.gif");
+  background-size: cover;
+  z-index: 10;
+  opacity: 1;
+  pointer-events: none; /* This prevents it from blocking clicks */
+  animation: fadeCloud 3s ease-in forwards;
+}
+
+@keyframes fadeCloud {
+  0% { opacity: 1; }
+  100% { 
+    opacity: 0;
+    visibility: hidden; /* This removes it from the DOM after fade */
+  }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="WAKE UP" tags="" position="400,100" size="100,100">&lt;img class=&quot;story-image&quot; src=&quot;./images/stairs.gif&quot; alt=&quot;an example&quot; /&gt;
 
 (t8n-delay:1s) + (t8n: &quot;dissolve&quot;) [A new day. A chance to reset and try again.]
  
