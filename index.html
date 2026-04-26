@@ -110,6 +110,15 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
  font-size: 125%;
 }
 
+#ui-bar {
+display: none;
+}
+
+#story {
+margin-left: 3.5em;
+}
+
+
 story-room {
   display: grid;  /* sets the display to grid on the surrounding div */
   grid-template-columns: 50% 50%;  /* sets each column to 50% */
@@ -158,21 +167,22 @@ h2 {
 
 }
 
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="launch" tags="" position="250,275" size="200,200">
-
-
-It&#39;s time to get ready for that party that you don&#39;t want to go to, but you should, because what else can you do with yourself? 
+}
 
 
-You check the Facebook invite. No dress code, not even a lazy &#39;smart casual&#39; or &#39;wear whatever.&#39; 
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="launch" tags="" position="250,275" size="200,200">It&#39;s time to get ready for that party that you don&#39;t want to go to. you have to worry about what to wear, amongst everything else. 
 
-What should you go with?
+You check the  &lt;&lt;link &quot;Facebook invite&quot;&gt;&gt; &lt;&lt;replace &quot;#result&quot;&gt;&gt; No dress code, not even a lazy &quot;smart casual&quot; or &quot;wear whatever.&quot;
 
+&lt;&lt;timed 4s&gt;&gt;
+You should go with
+[[something fancy]] 
+[[something comfortable]] &lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;/replace&gt;&gt; &lt;&lt;/link&gt;&gt;
+&lt;div id=&quot;result&quot;&gt; &lt;/div&gt;
 
-&lt;em&gt;[[something fancy]] 
-[[something comfortable]]&lt;/em&gt;</tw-passagedata><tw-passagedata pid="2" name="have a cold shower" tags="" position="1725,1975" size="100,100">
+</tw-passagedata><tw-passagedata pid="2" name="have a cold shower" tags="" position="1725,1975" size="100,100">
 
 &lt;&lt;type 40ms&gt;&gt;  
 The water is freezing cold. It cuts through to your bones. 
@@ -195,7 +205,7 @@ You feel:
 [[pumped up and motivated]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="5" name="turn it off" tags="" position="1775,2100" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="eat some food" tags="" position="1900,2100" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="journal" tags="" position="2025,2100" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="StoryInterface" tags="" position="600,275" size="100,100"></tw-passagedata><tw-passagedata pid="9" name="PassageHeader" tags="" position="475,175" size="100,100">&lt;div id=&quot;passageheader&quot;&gt; --------------------------------------------------------------------------------------------- &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="cold and afraid" tags="" position="1600,2225" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
+</tw-passagedata><tw-passagedata pid="5" name="turn it off" tags="" position="1775,2100" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="eat some food" tags="" position="1900,2100" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="journal" tags="" position="2025,2100" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="StoryInterface" tags="" position="600,275" size="100,100"></tw-passagedata><tw-passagedata pid="9" name="PassageHeader" tags="" position="475,175" size="100,100">&lt;div id=&quot;passageheader&quot;&gt;  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="cold and afraid" tags="" position="1600,2225" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
 Feeling like this, you feel a drag back to 
 &lt;em&gt;
 [[your room]] 
@@ -216,8 +226,7 @@ Wow, you made the right choice. You pumped up and motivated. But what if it does
 
 &lt;em&gt;[[choice 1 ]] 
 [[choice 2 ]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="choice 1 " tags="" position="1825,2350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="choice 2 " tags="" position="1700,2350" size="100,100"></tw-passagedata><tw-passagedata pid="16" name="PassageFooter" tags="" position="1175,725" size="100,100">&lt;div id=&quot;passagefooter&quot;&gt; 
-
---------------------------------------------------------------------------------------------- &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Untitled Passage 1" tags="" position="1300,725" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="turn the thoughts off" tags="" position="1275,3550" size="100,100">would you like to make your thoughts less anxious?
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Untitled Passage 1" tags="" position="1300,725" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="turn the thoughts off" tags="" position="1275,3550" size="100,100">would you like to make your thoughts less anxious?
 
 &lt;&lt;checkbox &quot;$no&quot; false true&gt;&gt; If only it was that easy, you dickhead. you can&#39;t just turn these thoughts &#39;off&#39;, and implying that is a very dangerous thing for those who suffer with mental illnesses. it puts the blame on the individual, like, if only i had the want to. do that, i could. i do have the want, but i can&#39;t. 
 &lt;&lt;checkbox &quot;$yes&quot; false true&gt;&gt; yes please!
