@@ -155,6 +155,7 @@ margin-left: 3.5em;
     align-items: center;
     padding: 15px;
     border: none; 
+    background: transparent; 
 
 }
 
@@ -247,7 +248,23 @@ background-attachment: fixed;
 
 #ui-dialog-overlay.error-dialog {
   background: rgba(80, 0, 0, 0.5);
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark" position="250,275" size="200,100">&lt;&lt;audio ticktick volume 0.5&gt;&gt;\
+}
+
+.passage[data-tags~="forest"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("bedroom.jpg");
+  background-size: cover;
+  opacity: 0.4; /* adjust transparency here */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.passage {
+  position: relative;
+  z-index: 1; /* text stays above the overlay */
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="250,275" size="200,100">&lt;&lt;audio ticktick volume 0.5&gt;&gt;\
 &lt;&lt;audio ticktick play&gt;&gt;\
 It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; &lt;&lt;nobr&gt;&gt; a party, how much could there be for you to worry about?&lt;&lt;/nobr&gt;&gt;\
 &lt;div class=&quot;title&quot;&gt; \
