@@ -226,8 +226,28 @@ background-attachment: fixed;
   animation-duration: 1s;
   animation-delay: 20s;
     animation-iteration-count: infinite;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark" position="250,275" size="200,100">&lt;&lt;audio ticktick volume 0.5&gt;&gt;\
+}
+
+/* Only affects dialogs opened with the "error-dialog" class */
+#ui-dialog.error-dialog {
+  background: #1a0000;
+  border: 2px solid #cc0000;
+  border-radius: 8px;
+}
+
+#ui-dialog.error-dialog #ui-dialog-titlebar {
+  background: #cc0000;
+  color: red;
+}
+
+#ui-dialog.error-dialog #ui-dialog-body {
+  color: #ff6666;
+  padding: 20px;
+}
+
+#ui-dialog-overlay.error-dialog {
+  background: rgba(80, 0, 0, 0.5);
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark" position="250,275" size="200,100">&lt;&lt;audio ticktick volume 0.5&gt;&gt;\
 &lt;&lt;audio ticktick play&gt;&gt;\
 It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; &lt;&lt;nobr&gt;&gt; a party, how much could there be for you to worry about?&lt;&lt;/nobr&gt;&gt;\
 &lt;div class=&quot;title&quot;&gt; \
@@ -257,7 +277,8 @@ It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; &lt;&lt;nobr&g
 &lt;&lt;timed 8.4s&gt;&gt; what if its a big prank to embarass you &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 8.6s&gt;&gt; what if no one else in the world is actually real &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 8.7s&gt;&gt; &lt;&lt;linkappend &quot;what to wear&quot;&gt;&gt;: there&#39;s no dress code. better [[something nice]] or [[something comfortable]]? &lt;&lt;/linkappend&gt;&gt; &lt;&lt;/timed&gt;&gt; &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="2" name="have a cold shower" tags="Dark" position="1725,1975" size="100,100">
+
+&lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="have a cold shower" tags="Dark" position="1725,1975" size="100,100">
 
 &lt;&lt;type 40ms&gt;&gt;  
 The water is freezing cold. It cuts through to your bones. 
@@ -300,7 +321,9 @@ Wow, you made the right choice. You pumped up and motivated. But what if it does
 Wow, you made the right choice. You pumped up and motivated. But what if it doesn&#39;t last? USED IT BEFORE IT GOES, QUICK, IT MAY NEVER COME BACK QUICK QUICK QUICK JUST:
 
 &lt;em&gt;[[choice 1 ]] 
-[[choice 2 ]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="choice 1 " tags="" position="1825,2350" size="100,100"></tw-passagedata><tw-passagedata pid="14" name="choice 2 " tags="" position="1700,2350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Untitled Passage 1" tags="" position="1300,725" size="100,100">Story Title&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="turn the thoughts off" tags="nicer" position="1275,3550" size="100,100">would you like to make your thoughts less anxious?
+[[choice 2 ]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="choice 1 " tags="" position="1825,2350" size="100,100"></tw-passagedata><tw-passagedata pid="14" name="choice 2 " tags="" position="1700,2350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Untitled Passage 1" tags="" position="1300,725" size="100,100">BAA BAA
+
+&lt;&lt;timed 10s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;You don&#39;t have the key!&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="turn the thoughts off" tags="nicer" position="1275,3550" size="100,100">would you like to make your thoughts less anxious?
 
 &lt;&lt;checkbox &quot;$no&quot; false true&gt;&gt; If only it was that easy.
 &lt;&lt;checkbox &quot;$yes&quot; false true&gt;&gt; yes please!
@@ -317,7 +340,13 @@ Wow, you made the right choice. You pumped up and motivated. But what if it does
  
 &lt;&lt;/link&gt;&gt;
 &lt;span id=&quot;error&quot;&gt;&lt;/span&gt;
-</tw-passagedata><tw-passagedata pid="17" name="NextPassage" tags="" position="1500,725" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="something comfortable" tags="Dark" position="600,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
+</tw-passagedata><tw-passagedata pid="17" name="NextPassage" tags="" position="1500,725" size="100,100">BAABABABABABA 
+
+&lt;&lt;timed 2s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="something comfortable" tags="Dark" position="600,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
 You put on &lt;&lt;linkreplace &quot;a pair of tracksuit pants&quot;&gt;&gt;&lt;&lt;linkreplace &quot;tattered jeans&quot;&gt;&gt; something generally unimpressive, much like yourself. &lt;&lt;/linkreplace&gt;&gt;
 &lt;&lt;/linkreplace&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;em&gt; Why do you look like that? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
@@ -491,7 +520,7 @@ You approach it, and start trying to &lt;&lt;linkappend &quot;jangle it open&quo
     [[no]]
    [[yes]]
 &lt;&lt;/linkappend&gt;&gt;
-</tw-passagedata><tw-passagedata pid="31" name="call your friend" tags="" position="250,1550" size="100,100">you open your phone and call them. 
+</tw-passagedata><tw-passagedata pid="31" name="call your friend" tags="Dark" position="250,1550" size="100,100">you open your phone and call them. 
 
 &lt;&lt;timed 1s&gt;&gt;
 &lt;&lt;audio callfriend play&gt;&gt;
@@ -558,13 +587,14 @@ He has anger in his eyes and voice. You shouldn&#39;t have come here. You want t
 
 [[tell him the truth--&gt;another]]
 [[give up now and just go home]</tw-passagedata><tw-passagedata pid="37" name="living room" tags="" position="550,2250" size="100,100">&lt;&lt;audio distantmusic stop&gt;&gt; &lt;&lt;audio loudindoorsounds play&gt;&gt; You enter a loud party. 
+
 You feel like an alien. The best first step is to:
 
 &lt;em&gt; 
 hide in [[the bathroom]]
 go [[find a drink]]
 play [[beer pong]]
-go [[talk to your friend]]</tw-passagedata><tw-passagedata pid="38" name="another" tags="Dark" position="675,1975" size="100,100">&lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt;
+go [[talk to your friend]]</tw-passagedata><tw-passagedata pid="38" name="another" tags="Dark" position="675,1950" size="100,100">&lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt;
 You tell him your name. It&#39;s &lt;&lt;textbox &quot;$playerName&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;button &quot;Continue&quot;&gt;&gt;
   &lt;&lt;if $playerName is &quot;&quot;&gt;&gt;
@@ -585,7 +615,7 @@ You tell him your name. It&#39;s &lt;&lt;textbox &quot;$playerName&quot; &quot;&
 
 &lt;&lt;timed 11s&gt;&gt; [[give up now and just go home]]
 [[call your friend]]
-try to [[let yourself in the front]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="give up now and just go home" tags="" position="725,3025" size="100,100">you walk home, thinking over all the things you&#39;ll do [[next time]]</tw-passagedata><tw-passagedata pid="40" name="ring them again" tags="" position="125,1675" size="100,100">&lt;&lt;audio theyanswer play&gt;&gt; 
+try to [[let yourself in the front]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="give up now and just go home" tags="" position="725,3025" size="100,100">you walk home, thinking over all the things you&#39;ll do [[next time]]</tw-passagedata><tw-passagedata pid="40" name="ring them again" tags="Dark" position="125,1675" size="100,100">&lt;&lt;audio theyanswer play&gt;&gt; 
 &lt;&lt;timed 2s&gt;&gt; oh god, they actually answered. who&#39;s going to speak first? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt; &lt;em&gt; hey what&#39;s up?....&lt;&lt;/timed&gt;&gt;
 
@@ -594,12 +624,12 @@ try to [[let yourself in the front]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-
 
 &lt;/em&gt;
 
-</tw-passagedata><tw-passagedata pid="41" name="&quot;where are you?&quot;" tags="" position="75,1800" size="100,100">&lt;&lt;audio phonelaugh play&gt;&gt; 
+</tw-passagedata><tw-passagedata pid="41" name="&quot;where are you?&quot;" tags="Dark" position="75,1800" size="100,100">&lt;&lt;audio phonelaugh play&gt;&gt; 
 they laugh a little bit. 
 &lt;em&gt; uhhh... &lt;/em&gt;
 you feel pushy, judgy, critisiced for rushing you. maybe they&#39;re laughing behind your back. they wait for you to say something....
 &lt;em&gt; [[stay silent]] &lt;/em&gt; 
-&lt;em&gt; [[tell them not to worry, you&#39;ll work it out]] &lt;/em&gt;</tw-passagedata><tw-passagedata pid="42" name="&quot;i&#39;m here. can you let me in!&quot;" tags="" position="275,1800" size="100,100">&lt;&lt;audio friendbusy play&gt;&gt;
+&lt;em&gt; [[tell them not to worry, you&#39;ll work it out]] &lt;/em&gt;</tw-passagedata><tw-passagedata pid="42" name="&quot;i&#39;m here. can you let me in!&quot;" tags="Dark" position="275,1800" size="100,100">&lt;&lt;audio friendbusy play&gt;&gt;
 
 &lt;em&gt; oh okay! give me one minute. &lt;/em&gt;
 they hang up... 
@@ -635,10 +665,9 @@ You hang up the phone.
 
 &lt;&lt;timed 5s&gt;&gt; You should:
  &lt;em&gt; [[ask them to let you in]] &lt;/em&gt; 
- &lt;em&gt; [[compliment their outfit]] &lt;/em&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="stay silent" tags="" position="475,1950" size="100,100">you stay silent...
+ &lt;em&gt; [[compliment their outfit]] &lt;/em&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="stay silent" tags="Dark" position="475,1950" size="100,100">you stay silent...
 &lt;&lt;audio areyoustillthere play&gt;&gt; 
 &quot;are you still there?&quot;
-
 [[yes-&gt;&quot;i&#39;m here. can you let me in!&quot;]]</tw-passagedata><tw-passagedata pid="45" name="ask them to let you in" tags="" position="100,2125" size="100,100">They giggle a little. &lt;em&gt; dude, I don&#39;t have a key... I&#39;ve got the same access as you. But the doors right here? Why don&#39;t we just... walk in? &lt;/em&gt; 
 
 &lt;&lt;timed 3s&gt;&gt; They&#39;re ridiculing you. They open the door, and look back at you curiously. &lt;&lt;/timed&gt;&gt;
@@ -874,7 +903,17 @@ Would you rather wear:
 
 &lt;&lt;timed 5s&gt;&gt;
 &lt;&lt;goto [[launch]]&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="something comfortable2" tags="nicer" position="1275,3800" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="something fancy2" tags="nicer" position="1400,3800" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. </tw-passagedata><tw-passagedata pid="74" name="what to wear" tags="" position="1950,900" size="100,100"></tw-passagedata><tw-passagedata pid="75" name="StoryInit" tags="" position="2400,1400" size="100,100">&lt;&lt;cacheaudio &quot;ticktick&quot; &quot;audio/clockticking.mp3&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="something comfortable2" tags="nicer" position="1275,3800" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="something fancy2" tags="nicer" position="1400,3800" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. </tw-passagedata><tw-passagedata pid="74" name="what to wear" tags="" position="1950,900" size="100,100"></tw-passagedata><tw-passagedata pid="75" name="StoryInit" tags="" position="2400,1400" size="100,100">
+Macro.add(&#39;error&#39;, {
+  handler() {
+    const message = this.args[0];
+    Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;);
+    Dialog.wiki(message);
+    Dialog.open();
+  }
+});
+
+&lt;&lt;cacheaudio &quot;ticktick&quot; &quot;audio/clockticking.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;heartandbreathe&quot; &quot;audio/heartandbreathe.mp3&quot;&gt;&gt; SimpleAudio.tracks.add(&quot;heartandbreathe&quot;, &quot;audio/heartandbreathe.mp3&quot;);
 &lt;&lt;cacheaudio &quot;somethingupbeat&quot; &quot;audio/somethingupbeat.mp3&quot;&gt;&gt; SimpleAudio.tracks.add(&quot;somethingupbeat&quot;, &quot;audio/somethingupbeat.mp3&quot;);
 </tw-passagedata><tw-passagedata pid="76" name="something nice" tags="d" position="225,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; You get changed into your nicest outfit&lt;&lt;timed 1s&gt;&gt; ...and look into the mirror. &lt;&lt;/timed&gt;&gt;
