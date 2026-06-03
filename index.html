@@ -466,7 +466,6 @@ You try to get into it, but thoughts start rising in the noise of it all.
 
 &lt;&lt;timed 5s&gt;&gt; You are incredibly overstimulated now, you rip off your headphones... &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;audio &quot;somethingupbeat&quot; stop&gt;&gt; 
 You see a text from your friend that you should probably
 &lt;em&gt; [[open]] &lt;/em&gt;
 
@@ -544,13 +543,10 @@ You approach it, and start trying to &lt;&lt;linkappend &quot;jangle it open&quo
     [[no]]
    [[yes]]
 &lt;&lt;/linkappend&gt;&gt;
-</tw-passagedata><tw-passagedata pid="31" name="call your friend" tags="Dark" position="250,1550" size="100,100">you open your phone and call them. 
+</tw-passagedata><tw-passagedata pid="31" name="call your friend" tags="Dark" position="250,1550" size="100,100">&lt;&lt;audio callfriend play&gt;&gt;
+you open your phone and call them. 
 
 &lt;&lt;timed 1s&gt;&gt;
-&lt;&lt;audio callfriend play&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 2s&gt;&gt;
 ....
 &lt;&lt;/timed&gt;&gt;
 
@@ -943,7 +939,7 @@ Macro.add(&#39;error&#39;, {
 &lt;&lt;cacheaudio &quot;bus&quot; &quot;audio/bus.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;distantmusic&quot; &quot;audio/distantmusic.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;getchanged&quot; &quot;audio/getchanged.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;getchanged&quot; &quot;audio/getchanged.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="something nice" tags="d" position="225,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
+&lt;&lt;cacheaudio &quot;callfriend&quot; &quot;audio/callfriend.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="something nice" tags="d" position="225,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
 &lt;&lt;audio getchanged play&gt;&gt;
 You get changed into your nicest outfit&lt;&lt;timed 1s&gt;&gt; ...and look into the mirror. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; Why do you look like that? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
