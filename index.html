@@ -254,7 +254,7 @@ background-attachment: fixed;
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("bedroom.jpg");
+  background-image: [img[images/download.gif]];
   background-size: cover;
   opacity: 0.4; /* adjust transparency here */
   z-index: 0;
@@ -487,6 +487,7 @@ You see a text from your friend that you should probably
 what should you say?
 &gt;&gt;&gt;&gt;&gt;[[i&#39;m coming, i&#39;m almost there]] 
 &gt;&gt;&gt;&gt;&gt;[[don&#39;t reply]] 
+
 </tw-passagedata><tw-passagedata pid="25" name="sit next to someone" tags="Dark" position="550,900" size="100,100">Sitting next to someone, they move away. You probably smell.
 After a bit the trip is over, you start walking to the house. 
 You see a text from your friend that you should probably
@@ -497,12 +498,14 @@ Finally, the trip is over. You hop off and start walking to the house.
 
 You see a text from your friend that you should probably
 &lt;em&gt; [[open]] &lt;/em&gt;
-</tw-passagedata><tw-passagedata pid="27" name="don&#39;t reply" tags="Dark" position="550,1200" size="100,100">You decide not to reply, because that&#39;s probably fine, right? You&#39;re about to see them.
+</tw-passagedata><tw-passagedata pid="27" name="don&#39;t reply" tags="Dark" position="550,1200" size="100,100">&lt;&lt;audio somethingsad stop&gt;&gt;
+You decide not to reply, because that&#39;s probably fine, right? You&#39;re about to see them.
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &lt;&lt;timed 5s&gt;&gt;IT&#39;S NOT FINE &lt;&lt;/timed&gt;&gt;
 
 You arrive on the street and hear &lt;&lt;link &quot;distant music&quot;&gt;&gt;&lt;&lt;audio &quot;distantmusic&quot; play&gt;&gt; &lt;&lt;/link&gt;&gt; coming from further down. 
 There&#39;s no going back now. Just try not to fuck it up. 
-Head towards [[the house]].</tw-passagedata><tw-passagedata pid="28" name="i&#39;m coming, i&#39;m almost there" tags="Dark" position="400,1250" size="100,100">&lt;&lt;type 40ms&gt;&gt; I&#39;m.. coming.. i&#39;m almost there. &lt;&lt;/type&gt;&gt;
+Head towards [[the house]].</tw-passagedata><tw-passagedata pid="28" name="i&#39;m coming, i&#39;m almost there" tags="Dark" position="400,1250" size="100,100">&lt;&lt;audio somethingsad stop&gt;&gt;
+&lt;&lt;type 40ms&gt;&gt; I&#39;m.. coming.. i&#39;m almost there. &lt;&lt;/type&gt;&gt;
 &lt;&lt;type 40ms&gt;&gt; is that okay? totally fine if not, i can head home. &lt;&lt;/type&gt;&gt;
 &lt;&lt;type 40ms&gt;&gt; I know you probably don&#39;t want me there anymore and I can&#39;t lie I don&#39;t wanan be there either. that okay? &lt;&lt;/type&gt;&gt; 
 
@@ -513,7 +516,8 @@ I&#39;m coming, I&#39;m almost there... really?
 
 You arrive on the street and hear &lt;&lt;link &quot;distant music&quot;&gt;&gt;&lt;&lt;audio &quot;distantmusic&quot; play&gt;&gt; &lt;&lt;/link&gt;&gt; coming from further down. 
 There&#39;s no going back now. Just try not to fuck it up. 
-Head towards [[the house]].</tw-passagedata><tw-passagedata pid="29" name="the house" tags="Dark" position="550,1325" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. Quick - look like you know what you&#39;re doing. 
+Head towards [[the house]].
+</tw-passagedata><tw-passagedata pid="29" name="the house" tags="Dark" position="550,1325" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. Quick - look like you know what you&#39;re doing. 
 &lt;&lt;timed 10s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//
 &lt;&lt;timed 11s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//
 You have to get inside. 
@@ -933,6 +937,8 @@ Macro.add(&#39;error&#39;, {
 &lt;&lt;cacheaudio &quot;ticktick&quot; &quot;audio/clockticking.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;heartandbreathe&quot; &quot;audio/heartandbreathe.mp3&quot;&gt;&gt; SimpleAudio.tracks.add(&quot;heartandbreathe&quot;, &quot;audio/heartandbreathe.mp3&quot;);
 &lt;&lt;cacheaudio &quot;somethingupbeat&quot; &quot;audio/somethingupbeat.mp3&quot;&gt;&gt; SimpleAudio.tracks.add(&quot;somethingupbeat&quot;, &quot;audio/somethingupbeat.mp3&quot;);
+&lt;&lt;cache audio &quot;somethingsad&quot; &quot;audio/somethingsad.mp3&quot;&gt;&gt;
+&lt;&lt;cache audio &quot;somethingupbeat&quot; &quot;audio/somethingupbeat.mp3&quot;&gt;&gt;
 </tw-passagedata><tw-passagedata pid="76" name="something nice" tags="d" position="225,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; You get changed into your nicest outfit&lt;&lt;timed 1s&gt;&gt; ...and look into the mirror. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; Why do you look like that? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt; You&#39;re going to be way overdressed. Bit of a try hard move, if you think about it.. &lt;&lt;/timed&gt;&gt;
