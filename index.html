@@ -104,7 +104,9 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Why are you like this?" startnode="78" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="43FBD582-81A9-4C63-8555-DBA7952C6460" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<tw-storydata name="Why are you like this?" startnode="78" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="43FBD582-81A9-4C63-8555-DBA7952C6460" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+
+body {
    font-family: "Google Sans Code", monospace;
   font-optical-sizing: auto;
  background-color: rgba(0,0,0,0.9);
@@ -263,6 +265,21 @@ background-attachment: fixed;
 .passage {
   position: relative;
   z-index: 1; /* text stays above the overlay */
+}
+
+#scene-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.scene-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="250,275" size="200,100">&lt;&lt;audio ticktick volume 0.5&gt;&gt;\
 &lt;&lt;audio ticktick play&gt;&gt;\
 &lt;h2&gt; It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; a party, how much could there be for you to worry about?&lt;/h2&gt;
@@ -555,7 +572,8 @@ You see a text from your friend that you should probably
 You decide not to reply, because that&#39;s probably fine, right? You&#39;re about to see them.
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &lt;&lt;timed 5s&gt;&gt;IT&#39;S NOT FINE &lt;&lt;/timed&gt;&gt;
 
-You arrive on the street and hear &lt;&lt;link &quot;distant music&quot;&gt;&gt;&lt;&lt;audio &quot;distantmusic&quot; play&gt;&gt; &lt;&lt;/link&gt;&gt; coming from further down. 
+You arrive on the street and hear &lt;&lt;link &quot;distant music&quot;&gt;&gt;
+&lt;&lt;audio &quot;distantmusic&quot; volume 0.5 loop play&gt;&gt; &lt;&lt;/link&gt;&gt; coming from further down. 
 There&#39;s no going back now. Just try not to fuck it up. 
 Head towards [[the house]].</tw-passagedata><tw-passagedata pid="28" name="i&#39;m coming, i&#39;m almost there" tags="Dark" position="400,1250" size="100,100">&lt;&lt;audio somethingsad stop&gt;&gt;
 &lt;&lt;type 40ms&gt;&gt; I&#39;m.. coming.. i&#39;m almost there. &lt;&lt;/type&gt;&gt;
@@ -658,7 +676,8 @@ You should:
 He has anger in his eyes and voice. You shouldn&#39;t have come here. You want to run away. &lt;&lt;/timed&gt;&gt;
 
 [[tell him the truth--&gt;another]]
-[[give up now and just go home]</tw-passagedata><tw-passagedata pid="37" name="living room" tags="" position="550,2250" size="100,100">&lt;&lt;audio housechatter play&gt;&gt;
+[[give up now and just go home]</tw-passagedata><tw-passagedata pid="37" name="living room" tags="" position="550,2250" size="100,100">&lt;&lt;audio distantmusic volume 1&gt;&gt;
+&lt;&lt;audio housechatter play&gt;&gt;
 &lt;&lt;audio crowdyell play&gt;&gt; 
 You enter a loud party. 
 
@@ -841,7 +860,7 @@ you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up
 
 you feel selfish, the other team insult you. 
 
-you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] </tw-passagedata><tw-passagedata pid="57" name="next time" tags="" position="850,3300" size="100,100">&lt;&lt;audio distant music stop&gt;&gt;/
+you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] </tw-passagedata><tw-passagedata pid="57" name="next time" tags="" position="850,3300" size="100,100">&lt;&lt;audio distantmusic stop&gt;&gt;/
 &lt;&lt;&lt;&lt;audio housechatter stop&gt;&gt;/
 &lt;&lt;audio crowdyell stop&gt;&gt; /
 &lt;&lt;audio ticktick volume 0.5&gt;&gt;/
@@ -1007,7 +1026,11 @@ why are you like this
 why are you like this
 why are you like this
 &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="Untitled Passage" tags="" position="925,1100" size="100,100"></tw-passagedata><tw-passagedata pid="78" name="Untitled Passage 2" tags="title-page" position="325,50" size="100,100">&lt;&lt;timed 1s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="Untitled Passage" tags="" position="1375,850" size="100,100">&lt;div id=&quot;scene-container&quot;&gt;
+    &lt;img class=&quot;scene-layer&quot; src=&quot;images/bedroom.jpg&quot;&gt;
+    &lt;img class=&quot;scene-layer&quot; src=&quot;images/title.jpg&quot;&gt;
+    &lt;img class=&quot;scene-layer&quot; src=&quot;images/pixels.jpg&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="Untitled Passage 2" tags="title-page" position="325,50" size="100,100">&lt;&lt;timed 1s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
 &lt;em&gt; &#39;Why are you like this?&#39; &lt;/em&gt; 
 &lt;&lt;timed 1s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
@@ -1017,7 +1040,13 @@ why are you like this
 [[Continue-&gt;launch]] 
 
 &lt;&lt;timed 3s&gt;&gt; by Al Pembroke &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="79" name="playing this game" tags="" position="850,3425" size="100,100">if only there was an option, an easy way out, that let you [[turn the thoughts off]]</tw-passagedata><tw-passagedata pid="80" name="sit down" tags="" position="750,2525" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
+&lt;i class=&quot;fa-solid fa-exclamation&quot;&gt;&lt;/i&gt;
+
+&lt;div id=&quot;scene-container&quot;&gt;
+    &lt;img class=&quot;scene-layer&quot; src=&quot;images/bedroom.jpg&quot;&gt;
+    &lt;img class=&quot;scene-layer&quot; src=&quot;images/title.jpg&quot;&gt;
+    &lt;img class=&quot;scene-layer&quot; src=&quot;images/pixels.jpg&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="playing this game" tags="" position="850,3425" size="100,100">if only there was an option, an easy way out, that let you [[turn the thoughts off]]</tw-passagedata><tw-passagedata pid="80" name="sit down" tags="" position="750,2525" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
 
 &lt;h2&gt; You sit in a group of people who don&#39;t want you there. &lt;/h2&gt;
 Your friend introduces you &lt;&lt;linkappend &quot;which is a nice thing to do&quot;&gt;&gt; out of pity.  Then, everyone turns to you. 
