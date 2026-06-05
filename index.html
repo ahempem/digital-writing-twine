@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Why are you like this?" startnode="77" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="43FBD582-81A9-4C63-8555-DBA7952C6460" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+	<tw-storydata name="Why are you like this?" startnode="77" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="43FBD582-81A9-4C63-8555-DBA7952C6460" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
 
 body {
    font-family: "Google Sans Code", monospace;
@@ -302,65 +302,55 @@ background-attachment: fixed;
     z-index: 9998;
     pointer-events: all; /* blocks all page interaction */
     display: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">function startChaos() {
-    /* Show the overlay to block all interaction */
-    document.getElementById("chaos-overlay").style.display = "block";
-
-    var messages = [
-        "YOU CAN'T ESCAPE",
-        "WHY DID YOU CLICK?",
-        "IT'S TOO LATE",
-        "HELP",
-        "NO",
-        "STOP",
-        "ERROR ERROR ERROR",
-        "...",
-    ];
-
-    var count = 0;
-    var maxPopups = 40;
-    var interval = 600; /* ms between each popup, gets faster */
-
-    function spawnPopup() {
-        if (count >= maxPopups) {
-            endChaos(); /* optional: resolve after hitting max */
-            return;
-        }
-
-        var popup = document.createElement("div");
-        popup.className = "chaos-popup";
-
-        /* Random position across the screen */
-        popup.style.left = Math.random() * (window.innerWidth  - 220) + "px";
-        popup.style.top  = Math.random() * (window.innerHeight - 100) + "px";
-
-        /* Random message */
-        popup.innerHTML = messages[Math.floor(Math.random() * messages.length)];
-
-        /* Each popup gets slightly higher z-index so they stack */
-        popup.style.zIndex = 9999 + count;
-
-        document.body.appendChild(popup);
-        count++;
-
-        /* Speed up over time */
-        interval = Math.max(100, interval - 20);
-        setTimeout(spawnPopup, interval);
-    }
-
-    spawnPopup();
 }
 
-function endChaos() {
-    /* Optional: clear everything and move to next passage */
-    document.querySelectorAll(".chaos-popup").forEach(function(el) {
-        el.remove();
-    });
-    document.getElementById("chaos-overlay").style.display = "none";
-    Engine.play("NextPassage");
+/* Overlay container */
+#photo-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
 }
 
-</script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="250,275" size="200,100">&lt;&lt;audio ticktick volume 0.5&gt;&gt;\
+#photo-overlay. active {
+  display: flex;
+}
+
+/* The photo itself */
+#photo-overlay img {
+  max-width: 80%;
+  max-height: 80%;
+  border: 4px solid white;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.showPhoto = function(src, displayTime) {
+  var overlay = document.getElementById('photo-overlay');
+
+  /* Create the overlay once, if it doesn't already exist */
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'photo-overlay';
+    overlay.innerHTML = '<img src="" alt="story image" />';
+    document.body.appendChild(overlay);
+  }
+
+  var img = overlay.querySelector('img');
+  img.src = src;
+  overlay.classList.add('active');
+
+  setTimeout(function() {
+    overlay.classList.remove('active');
+  }, displayTime || 3500);
+};</script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="2025,475" size="200,100">&lt;&lt;audio ticktick volume 0.5&gt;&gt;\
 &lt;&lt;audio ticktick play&gt;&gt;\
 &lt;h2&gt; It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; a party, how much could there be for you to worry about?&lt;/h2&gt;
 &lt;div class=&quot;title&quot;&gt; \
@@ -404,7 +394,7 @@ function endChaos() {
 &lt;&lt;timed 31s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHAT ARE YOU GOING TO WEAR?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="have a cold shower" tags="Dark" position="1725,1975" size="100,100">
+&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="have a cold shower" tags="Dark" position="5175,1125" size="100,100">
 
 &lt;&lt;type 40ms&gt;&gt;  
 The water is freezing cold. It cuts through to your bones. 
@@ -412,11 +402,11 @@ Why do you do this to yourself?
 &lt;em&gt;[[endure it]] 
 [[turn it off]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="3" name="have a coffee" tags="" position="1850,1975" size="100,100">The coffee machine screams into action. You chug it straight. 
+</tw-passagedata><tw-passagedata pid="3" name="have a coffee" tags="" position="5300,1125" size="100,100">The coffee machine screams into action. You chug it straight. 
 Your heart is beating very fast now. Are you going to die?
 To ground yourself, you should:
 [[eat some food]] 
-[[journal]]</tw-passagedata><tw-passagedata pid="4" name="endure it" tags="" position="1650,2100" size="100,100">
+[[journal]]</tw-passagedata><tw-passagedata pid="4" name="endure it" tags="" position="5100,1250" size="100,100">
 
 &lt;&lt;type 40ms&gt;&gt;  
 You clench your jaw so hard you get a headache. Why do you do this to yourself? 
@@ -427,7 +417,7 @@ You feel:
 [[pumped up and motivated]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="5" name="turn it off" tags="" position="1775,2100" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="eat some food" tags="" position="1900,2100" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="journal" tags="" position="2025,2100" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="StoryInterface" tags="" position="600,275" size="100,100"></tw-passagedata><tw-passagedata pid="9" name="cold and afraid" tags="" position="1600,2225" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
+</tw-passagedata><tw-passagedata pid="5" name="turn it off" tags="" position="5225,1250" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="eat some food" tags="" position="5350,1250" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="journal" tags="" position="4900,975" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="StoryInterface" tags="" position="2350,475" size="100,100"></tw-passagedata><tw-passagedata pid="9" name="cold and afraid" tags="" position="5050,1375" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
 Feeling like this, you feel a drag back to 
 &lt;em&gt;
 [[your room]] 
@@ -437,19 +427,19 @@ Feeling like this, you feel a drag back to
 
 &lt;/em&gt; 
 &lt;&lt;/type&gt;&gt; 
-</tw-passagedata><tw-passagedata pid="10" name="pumped up and motivated " tags="" position="1750,2225" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
+</tw-passagedata><tw-passagedata pid="10" name="pumped up and motivated " tags="" position="5200,1375" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
 
 Wow, you made the right choice. You pumped up and motivated. But what if it doesn&#39;t last? USED IT BEFORE IT GOES, QUICK, IT MAY NEVER COME BACK QUICK QUICK QUICK JUST:
 
 &lt;em&gt;[[choice 1 ]] 
-[[choice 2 ]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="your room" tags="" position="1425,2000" size="100,100"></tw-passagedata><tw-passagedata pid="12" name="pumped up and motivated" tags="" position="1650,2475" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
+[[choice 2 ]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="your room" tags="" position="4875,1150" size="100,100"></tw-passagedata><tw-passagedata pid="12" name="pumped up and motivated" tags="" position="5150,850" size="100,100">&lt;&lt;type 40ms&gt;&gt;  
 
 Wow, you made the right choice. You pumped up and motivated. But what if it doesn&#39;t last? USED IT BEFORE IT GOES, QUICK, IT MAY NEVER COME BACK QUICK QUICK QUICK JUST:
 
 &lt;em&gt;[[choice 1 ]] 
-[[choice 2 ]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="choice 1 " tags="" position="1825,2350" size="100,100"></tw-passagedata><tw-passagedata pid="14" name="choice 2 " tags="" position="1700,2350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Untitled Passage 1" tags="" position="1300,725" size="100,100">BAA BAA
+[[choice 2 ]]&lt;/em&gt; &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="choice 1 " tags="" position="5275,1500" size="100,100"></tw-passagedata><tw-passagedata pid="14" name="choice 2 " tags="" position="5150,1500" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Untitled Passage 1" tags="" position="4975,475" size="100,100">BAA BAA
 
-&lt;&lt;timed 10s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;You don&#39;t have the key!&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="turn the thoughts off" tags="nicer" position="1275,3550" size="100,100">would you like to make your thoughts less anxious?
+&lt;&lt;timed 10s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;You don&#39;t have the key!&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="turn the thoughts off" tags="nicer" position="3025,3750" size="100,100">would you like to make your thoughts less anxious?
 
 &lt;&lt;checkbox &quot;$no&quot; false true&gt;&gt; If only it was that easy.
 &lt;&lt;checkbox &quot;$yes&quot; false true&gt;&gt; yes please!
@@ -466,13 +456,13 @@ Wow, you made the right choice. You pumped up and motivated. But what if it does
  
 &lt;&lt;/link&gt;&gt;
 &lt;span id=&quot;error&quot;&gt;&lt;/span&gt;
-</tw-passagedata><tw-passagedata pid="17" name="NextPassage" tags="" position="1500,725" size="100,100">BAABABABABABA 
+</tw-passagedata><tw-passagedata pid="17" name="NextPassage" tags="" position="4550,250" size="100,100">BAABABABABABA 
 
 &lt;&lt;timed 2s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="something comfortable" tags="Dark" position="600,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
+&lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="something comfortable" tags="Dark" position="2425,675" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
 &lt;h2&gt; You search through your cupboard &lt;/h2&gt;
 You  choose &lt;&lt;linkreplace &quot;a pair of tracksuit pants&quot;&gt;&gt;&lt;&lt;linkreplace &quot;tattered jeans&quot;&gt;&gt; something generally unimpressive, much like yourself. &lt;&lt;/linkreplace&gt;&gt; 
 &lt;&lt;/linkreplace&gt;&gt;
@@ -514,7 +504,7 @@ just [[leave the house]]
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="19" name="leave the house" tags="Dark" position="425,650" size="100,100">&lt;&lt;audio getchanged stop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="19" name="leave the house" tags="Dark" position="2075,850" size="100,100">&lt;&lt;audio getchanged stop&gt;&gt;
 &lt;&lt;audio earring play&gt;&gt;
 
 &lt;h2&gt; You collect your stuff and step outside. It&#39;s loud, too bright yet too dark. &lt;/h2&gt;
@@ -534,7 +524,7 @@ You take a deep &lt;&lt;link &quot;breath&quot;&gt;&gt;&lt;&lt;audio &quot;heart
 &lt;&lt;timed 30s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="tram it" tags="Dark" position="600,750" size="200,100">&lt;&lt;audio &quot;somethingsad&quot; stop&gt;&gt;
+&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="tram it" tags="Dark" position="2250,975" size="200,100">&lt;&lt;audio &quot;somethingsad&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;bus&quot; play&gt;&gt;
 &lt;h2&gt; The bus is 2 minutes away. You run. You don&#39;t have your bus card and you will now spend the whole time freaking out about that. &lt;/h2&gt;
 &lt;&lt;timed 5s&gt;&gt; What if someone catches you? &lt;&lt;/timed&gt;&gt; 
@@ -560,7 +550,7 @@ Should you
 &lt;&lt;timed 30s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="walk it" tags="dark Dark" position="225,750" size="100,100">&lt;h2&gt; You wish you had a bit more of a buffer time to get there, so you walk. &lt;/h2&gt;
+&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="walk it" tags="dark Dark" position="1850,950" size="100,100">&lt;h2&gt; You wish you had a bit more of a buffer time to get there, so you walk. &lt;/h2&gt;
 As you do, your thoughts start creeping in....
 you should play some music to get rid of it. 
 
@@ -605,7 +595,7 @@ or &lt;em&gt; [[something upbeat]] &lt;/em&gt; &lt;&lt;timed 7s&gt;&gt; &lt;em&g
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="22" name="something upbeat" tags="Dark" position="100,900" size="100,100">&lt;&lt;audio &quot;heartandbreathe&quot; stop&gt;&gt; 
+</tw-passagedata><tw-passagedata pid="22" name="something upbeat" tags="Dark" position="1625,1100" size="100,100">&lt;&lt;audio &quot;heartandbreathe&quot; stop&gt;&gt; 
 &lt;&lt;audio somethingupbeat play&gt;&gt; 
 You try to get into it, but thoughts start rising in the noise of it all. 
 &lt;&lt;timed 2s&gt;&gt; AHHHHHHHHHH&lt;&lt;/timed&gt;&gt;&lt;&lt;timed 3s&gt;&gt;HHHHHHHHHHHHHHHHHHH&lt;&lt;/timed&gt;&gt;
@@ -616,12 +606,12 @@ You see a text from your friend that you should probably
 &lt;em&gt; [[open]] &lt;/em&gt;
 
 
-</tw-passagedata><tw-passagedata pid="23" name="something melancoholy" tags="Dark" position="325,900" size="100,100">&lt;&lt;audio &quot;heartandbreathe stop&quot;&gt;&gt; 
+</tw-passagedata><tw-passagedata pid="23" name="something melancoholy" tags="Dark" position="1950,1075" size="100,100">&lt;&lt;audio &quot;heartandbreathe stop&quot;&gt;&gt; 
 &lt;&lt;audio &quot;somethingsad&quot; play&gt;&gt;
 You play a mellow tune that reminds you of your inner failings. You whisper along to it as you walk....
 You see a text from your friend that you should probably
 &lt;em&gt; [[open]] &lt;/em&gt;
-</tw-passagedata><tw-passagedata pid="24" name="open" tags="Dark" position="475,1075" size="100,100">&lt;&lt;audio bus stop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="24" name="open" tags="Dark" position="2150,1275" size="100,100">&lt;&lt;audio bus stop&gt;&gt;
 &lt;h2&gt; You open the text with shaky hands. &lt;/h2&gt;
 
  &lt;&lt;run Dialog.setup(&quot;TEXT&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;hey, are you coming tonight?&quot;); Dialog.open();&gt;&gt; 
@@ -634,7 +624,7 @@ You take all this in.
 What should you say?
 &gt;&gt;&gt;&gt;&gt;[[i&#39;m coming, i&#39;m almost there]] 
 &gt;&gt;&gt;&gt;&gt;[[don&#39;t reply]] &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="25" name="sit next to someone" tags="Dark" position="550,900" size="100,100">&lt;h2&gt; You sit next to someone, but they move away because you&#39;re fucking repulsive! &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="25" name="sit next to someone" tags="Dark" position="2300,1100" size="100,100">&lt;h2&gt; You sit next to someone, but they move away because you&#39;re fucking repulsive! &lt;/h2&gt;
 
 What made them uncomfortable? Maybe you &lt;&lt;linkreplace &quot;smell bad&quot;&gt;&gt;&lt;&lt;linkreplace &quot;look so ugly they felt sick&quot;&gt;&gt;&lt;&lt;linkreplace &quot;seem dangeours&quot;&gt;&gt;&lt;&lt;linkreplace &quot;accidentally touched them&quot;&gt;&gt;&lt;&lt;linkreplace &quot;made them uncomfortable&quot;&gt;&gt;will never solve that mystery. &lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
 &lt;&lt;/linkreplace&gt;&gt;
@@ -676,7 +666,7 @@ What made them uncomfortable? Maybe you &lt;&lt;linkreplace &quot;smell bad&quot
 &lt;&lt;timed 66s&gt;&gt; Maybe you should also keep trying to solve that mystery. 
 What made them uncomfortable? Maybe you &lt;&lt;linkreplace &quot;smell bad&quot;&gt;&gt;&lt;&lt;linkreplace &quot;look so ugly they felt sick&quot;&gt;&gt;&lt;&lt;linkreplace &quot;seem dangeours&quot;&gt;&gt;&lt;&lt;linkreplace &quot;accidentally touched them&quot;&gt;&gt;&lt;&lt;linkreplace &quot;made them uncomfortable&quot;&gt;&gt;are a fucking freak and it was all of the above because so much is wrong with you, and honestly you should just [[give up now and just go home]] &lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
 &lt;&lt;/linkreplace&gt;&gt; &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="26" name="stand on your own" tags="Dark" position="675,900" size="100,100">&lt;h2&gt; You stand up and hold the rails, attracting even more attention to yourself. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="26" name="stand on your own" tags="Dark" position="2450,1100" size="100,100">&lt;h2&gt; You stand up and hold the rails, attracting even more attention to yourself. &lt;/h2&gt;
 
 &lt;&lt;timed 2s&gt;&gt; EVERYONE IS LOOKING AT YOU! &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Do you see it?&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;Everyone is looking at you.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
@@ -695,14 +685,14 @@ What made them uncomfortable? Maybe you &lt;&lt;linkreplace &quot;smell bad&quot
 As you walk, you see a text from your friend that you should probably
 &lt;em&gt; [[open]] &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="27" name="don&#39;t reply" tags="Dark" position="550,1200" size="100,100">&lt;&lt;audio somethingsad stop&gt;&gt;
+</tw-passagedata><tw-passagedata pid="27" name="don&#39;t reply" tags="Dark" position="2275,1400" size="100,100">&lt;&lt;audio somethingsad stop&gt;&gt;
 You decide not to reply, because that&#39;s probably fine, right? You&#39;re about to see them.
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &lt;&lt;timed 5s&gt;&gt;IT&#39;S NOT FINE &lt;&lt;/timed&gt;&gt;
 
 You arrive on the street and hear &lt;&lt;link &quot;distant music&quot;&gt;&gt;
 &lt;&lt;audio &quot;distantmusic&quot; volume 0.5 play&gt;&gt; &lt;&lt;/link&gt;&gt; coming from further down. 
 There&#39;s no going back now. Just try not to fuck it up. 
-Head towards [[the house]].</tw-passagedata><tw-passagedata pid="28" name="i&#39;m coming, i&#39;m almost there" tags="Dark" position="400,1250" size="100,100">&lt;&lt;audio somethingsad stop&gt;&gt;
+Head towards [[the house]].</tw-passagedata><tw-passagedata pid="28" name="i&#39;m coming, i&#39;m almost there" tags="Dark" position="2000,1400" size="100,100">&lt;&lt;audio somethingsad stop&gt;&gt;
 &lt;&lt;type 40ms&gt;&gt; I&#39;m.. coming.. i&#39;m almost there. &lt;&lt;/type&gt;&gt;
 &lt;&lt;type 40ms&gt;&gt; is that okay? totally fine if not, i can head home. &lt;&lt;/type&gt;&gt;
 &lt;&lt;type 40ms&gt;&gt; I know you probably don&#39;t want me there anymore and I can&#39;t lie I don&#39;t wanan be there either. that okay? &lt;&lt;/type&gt;&gt; 
@@ -715,7 +705,7 @@ Head towards [[the house]].</tw-passagedata><tw-passagedata pid="28" name="i&#39
 &lt;&lt;timed 19s&gt;&gt; You arrive on the street and hear &lt;&lt;link &quot;distant music&quot;&gt;&gt;&lt;&lt;audio &quot;distantmusic&quot; volume 0.5 play&gt;&gt; &lt;&lt;/link&gt;&gt; coming from further down. 
 There&#39;s no going back now. Just try not to fuck it up. 
 Head towards [[the house]].&lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="29" name="the house" tags="Dark" position="550,1325" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. Quick - look like you know what you&#39;re doing. 
+</tw-passagedata><tw-passagedata pid="29" name="the house" tags="Dark" position="2125,1525" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. Quick - look like you know what you&#39;re doing. 
 &lt;&lt;timed 10s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//
 &lt;&lt;timed 11s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//
 You have to get inside. 
@@ -732,7 +722,7 @@ You have to get inside.
 &lt;&lt;timed 13.4s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//
 &lt;&lt;timed 13.6s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//
 &lt;&lt;timed 13.8s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//
-&lt;&lt;timed 14s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//</tw-passagedata><tw-passagedata pid="30" name="sneak around the back" tags="Dark" position="525,1450" size="100,100">&lt;h2&gt; You see a side door that looks openable. A subtle way to enter.&lt;/h2&gt;
+&lt;&lt;timed 14s&gt;&gt; THE LONGER YOU STAY OUT HERE, THE HARDER IT WILL BE. &lt;&lt;/timed&gt;&gt;//</tw-passagedata><tw-passagedata pid="30" name="sneak around the back" tags="Dark" position="2075,1700" size="100,100">&lt;h2&gt; You see a side door that looks openable. A subtle way to enter.&lt;/h2&gt;
 Nice. Maybe you&#39;re not all bad.
 
 &lt;&lt;timed 4s&gt;&gt; What a funny joke that is. Don&#39;t believe it? Watch how this goes. &lt;&lt;/timed&gt;&gt;
@@ -748,7 +738,7 @@ Nice. Maybe you&#39;re not all bad.
 
 &lt;&lt;timed 17s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;YOU CAN&#39;T DO ANYTHING RIGHT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 15s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;NOTHING YOU DO IS GOOD&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 19s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;BECAUSE YOU ARE YOU,&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS NO GOOD OPTION&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="call your friend" tags="Dark" position="250,1550" size="100,100">&lt;&lt;audio callfriend play&gt;&gt;
+&lt;&lt;timed 19s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;BECAUSE YOU ARE YOU,&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS NO GOOD OPTION&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="call your friend" tags="Dark" position="1475,1700" size="100,100">&lt;&lt;audio callfriend play&gt;&gt;
 you open your phone and call them. 
 
 &lt;&lt;timed 1s&gt;&gt;
@@ -762,11 +752,11 @@ you open your phone and call them.
 &lt;&lt;timed 4s&gt;&gt;
 [[ring them again]] 
 [[let yourself in the front]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="let yourself in the front" tags="Dark" position="825,1525" size="100,100">You knock on the door. Someone walks past you and just opens it.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="let yourself in the front" tags="Dark" position="2950,1750" size="100,100">You knock on the door. Someone walks past you and just opens it.
 &lt;&lt;timed 3s&gt;&gt; Of course they do. Who the hell &lt;strong&gt; knocks?! &lt;/strong&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; It&#39;s really loud out here, but it seems like it&#39;s even louder inside. Are you going to fucking stand here forever, though? People are LOOKING AT YOU. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 8s&gt;&gt; WHY ARE YOU JUST STANDING THERE? GET INSIDE &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 7s&gt;&gt; it looks really stuffy in there &lt;&lt;/timed&gt;&gt; You walk into the [[living room]] &lt;&lt;timed 10s&gt;&gt; but you really really do not want to &lt;&lt;/timed&gt;&gt; </tw-passagedata><tw-passagedata pid="33" name="no" tags="Dark" position="475,1575" size="100,100">&lt;h2&gt; You say you&#39;re not there. What? How is that possible? &lt;/h2&gt;
+&lt;&lt;timed 7s&gt;&gt; it looks really stuffy in there &lt;&lt;/timed&gt;&gt; You walk into the [[living room]] &lt;&lt;timed 10s&gt;&gt; but you really really do not want to &lt;&lt;/timed&gt;&gt; </tw-passagedata><tw-passagedata pid="33" name="no" tags="Dark" position="1925,1800" size="100,100">&lt;h2&gt; You say you&#39;re not there. What? How is that possible? &lt;/h2&gt;
 What a stupid answer. 
 &lt;&lt;timed 4s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3.2s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt;
 &lt;em&gt; Yes, there is. What the fuck are you doing, dude? You could&#39;ve let the dog out.&lt;/em&gt; 
@@ -784,7 +774,7 @@ You should:
 &lt;&lt;timed 7s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 6s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 13s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 17s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 16s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 7s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 13s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 18s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 18s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 14s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 19s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 19s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 20s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 19s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 7s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 13s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt;  &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="34" name="yes" tags="Dark" position="600,1575" size="100,100">&lt;h2&gt; Jacob opens the door fully. He towers over you. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="34" name="yes" tags="Dark" position="2200,1800" size="100,100">&lt;h2&gt; Jacob opens the door fully. He towers over you. &lt;/h2&gt;
 &lt;&lt;timed 10s&gt;&gt; YOU COULD&#39;VE KILLED A DOG YOU MONSTER YOU COULD&#39;VE KILLED A DOG YOU MONSTER YOU COULD&#39;VE KILLED A DOG YOU MONSTER YOU COULD&#39;VE KILLED A DOG YOU MONSTER YOU COULD&#39;VE KILLED A DOG YOU MONSTER &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 2.5s&gt;&gt; &lt;em&gt; Why are you sneaking around like that? You almost let the dog out. if you knocked, someone would&#39;ve let you in. &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
@@ -795,7 +785,7 @@ You should:
 [[apologise]]
 [[say nothing]]
 
-&lt;&lt;timed 10s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 11s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; </tw-passagedata><tw-passagedata pid="35" name="apologise" tags="Dark" position="400,1700" size="100,100">&lt;h2&gt; You apologise a lot. &lt;/h2&gt;
+&lt;&lt;timed 10s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 11s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12s&gt;&gt; why are you like this why &lt;&lt;/timed&gt;&gt; </tw-passagedata><tw-passagedata pid="35" name="apologise" tags="Dark" position="2000,2000" size="100,100">&lt;h2&gt; You apologise a lot. &lt;/h2&gt;
 You didn&#39;t mean to upset him. Or try to let the dog out. You were just trying to get into the place.
 
 &lt;&lt;timed 3s&gt;&gt; You sound like an idiot. You sound like a child. &lt;&lt;/timed&gt;&gt; 
@@ -808,7 +798,7 @@ You didn&#39;t mean to upset him. Or try to let the dog out. You were just tryin
 
 
 &lt;&lt;timed 7s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;HE WANTS TO KNOW YOUR NAME&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="36" name="say nothing" tags="Dark" position="550,1700" size="100,100">You stare back at him. He raises his eyebrows expectantly. 
+</tw-passagedata><tw-passagedata pid="36" name="say nothing" tags="Dark" position="2125,2000" size="100,100">You stare back at him. He raises his eyebrows expectantly. 
 &lt;&lt;timed 1.5s&gt;&gt; &lt;em&gt; Well? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
 
 &lt;timed 3s&gt;&gt; YOU SHOULD ANSWER HIM, ANSWER HIM ANSWER HIM. WHY IS HE LOOKING AT YOU LIKE THAT? &lt;&lt;/timed&gt;&gt;
@@ -817,7 +807,7 @@ You didn&#39;t mean to upset him. Or try to let the dog out. You were just tryin
 He has anger in his eyes and voice. You shouldn&#39;t have come here. You want to run away. &lt;&lt;/timed&gt;&gt;
 
 [[tell him the truth--&gt;another]]
-[[give up now and just go home]</tw-passagedata><tw-passagedata pid="37" name="living room" tags="" position="550,2250" size="100,100">&lt;&lt;audio &quot;distantmusic&quot; fadeoverto 2 0.9&gt;&gt;
+[[give up now and just go home]</tw-passagedata><tw-passagedata pid="37" name="living room" tags="" position="2025,2575" size="100,100">&lt;&lt;audio &quot;distantmusic&quot; fadeoverto 2 0.9&gt;&gt;
 &lt;&lt;audio &quot;housechatter&quot; volume 0.5 play&gt;&gt;
 &lt;&lt;audio &quot;crowdyell&quot; volume 0.5 play&gt;&gt; 
 You enter a loud party. 
@@ -829,7 +819,7 @@ hide in [[the bathroom]]
 go [[find a drink]]
 play [[beer pong]]
 go [[talk to your friend]]
-&lt;/em&gt;</tw-passagedata><tw-passagedata pid="38" name="another" tags="Dark" position="675,1950" size="100,100">&lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt;
+&lt;/em&gt;</tw-passagedata><tw-passagedata pid="38" name="another" tags="Dark" position="2075,2175" size="100,100">&lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; What have you done, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 10s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 15s&gt;&gt; Why are you like this, $playerName? &lt;&lt;/timed&gt;&gt;
 You tell him your name. It&#39;s &lt;&lt;textbox &quot;$playerName&quot; &quot;&quot;&gt;&gt;
 &lt;&lt;button &quot;Continue&quot;&gt;&gt;
   &lt;&lt;if $playerName is &quot;&quot;&gt;&gt;
@@ -850,7 +840,7 @@ You tell him your name. It&#39;s &lt;&lt;textbox &quot;$playerName&quot; &quot;&
 
 &lt;&lt;timed 11s&gt;&gt; [[give up now and just go home]]
 [[call your friend]]
-try to [[let yourself in the front]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="give up now and just go home" tags="" position="725,3025" size="100,100">you walk home, thinking over all the things you&#39;ll do [[next time]]</tw-passagedata><tw-passagedata pid="40" name="ring them again" tags="Dark" position="125,1675" size="100,100">&lt;&lt;audio theyanswer play&gt;&gt; 
+try to [[let yourself in the front]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="give up now and just go home" tags="" position="2150,3475" size="100,100">you walk home, thinking over all the things you&#39;ll do [[next time]]</tw-passagedata><tw-passagedata pid="40" name="ring them again" tags="Dark" position="1200,1825" size="100,100">&lt;&lt;audio theyanswer play&gt;&gt; 
 &lt;&lt;timed 2s&gt;&gt; oh god, they actually answered. who&#39;s going to speak first? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt; &lt;em&gt; hey what&#39;s up?....&lt;&lt;/timed&gt;&gt;
 
@@ -859,12 +849,12 @@ try to [[let yourself in the front]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-
 
 &lt;/em&gt;
 
-</tw-passagedata><tw-passagedata pid="41" name="&quot;where are you?&quot;" tags="Dark" position="75,1800" size="100,100">&lt;&lt;audio phonelaugh play&gt;&gt; 
+</tw-passagedata><tw-passagedata pid="41" name="&quot;where are you?&quot;" tags="Dark" position="1100,2000" size="100,100">&lt;&lt;audio phonelaugh play&gt;&gt; 
 they laugh a little bit. 
 &lt;em&gt; uhhh... &lt;/em&gt;
 you feel pushy, judgy, critisiced for rushing you. maybe they&#39;re laughing behind your back. they wait for you to say something....
 &lt;em&gt; [[stay silent]] &lt;/em&gt; 
-&lt;em&gt; [[tell them not to worry, you&#39;ll work it out]] &lt;/em&gt;</tw-passagedata><tw-passagedata pid="42" name="&quot;i&#39;m here. can you let me in!&quot;" tags="Dark" position="275,1800" size="100,100">&lt;&lt;audio friendbusy play&gt;&gt;
+&lt;em&gt; [[tell them not to worry, you&#39;ll work it out]] &lt;/em&gt;</tw-passagedata><tw-passagedata pid="42" name="&quot;i&#39;m here. can you let me in!&quot;" tags="Dark" position="1250,2000" size="100,100">&lt;&lt;audio friendbusy play&gt;&gt;
 
 &lt;em&gt; oh okay! give me one minute. &lt;/em&gt;
 they hang up... 
@@ -889,7 +879,7 @@ after almost a minute, your friend comes out!
 
 you reckon they left you waiting on purpose, but you follow them inside to the [[living room]].
 
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="tell them not to worry, you&#39;ll work it out" tags="" position="125,1925" size="100,100">&lt;em&gt; i&#39;ll work it out &lt;/em&gt; you tell them.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="tell them not to worry, you&#39;ll work it out" tags="" position="1000,2200" size="100,100">&lt;em&gt; i&#39;ll work it out &lt;/em&gt; you tell them.
 You hang up the phone. 
 &lt;&lt;audio hangup play&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt; &lt;&lt;audio hangup stop&gt;&gt; &lt;&lt;/timed&gt;&gt;
@@ -900,17 +890,17 @@ You hang up the phone.
 
 &lt;&lt;timed 5s&gt;&gt; You should:
  &lt;em&gt; [[ask them to let you in]] &lt;/em&gt; 
- &lt;em&gt; [[compliment their outfit]] &lt;/em&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="stay silent" tags="Dark" position="475,1950" size="100,100">you stay silent...
+ &lt;em&gt; [[compliment their outfit]] &lt;/em&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="stay silent" tags="Dark" position="1225,2200" size="100,100">you stay silent...
 &lt;&lt;audio areyoustillthere play&gt;&gt; 
 &quot;are you still there?&quot;
-[[yes-&gt;&quot;i&#39;m here. can you let me in!&quot;]]</tw-passagedata><tw-passagedata pid="45" name="ask them to let you in" tags="" position="100,2125" size="100,100">They giggle a little. &lt;em&gt; dude, I don&#39;t have a key... I&#39;ve got the same access as you. But the doors right here? Why don&#39;t we just... walk in? &lt;/em&gt; 
+[[yes-&gt;&quot;i&#39;m here. can you let me in!&quot;]]</tw-passagedata><tw-passagedata pid="45" name="ask them to let you in" tags="" position="1225,2475" size="100,100">They giggle a little. &lt;em&gt; dude, I don&#39;t have a key... I&#39;ve got the same access as you. But the doors right here? Why don&#39;t we just... walk in? &lt;/em&gt; 
 
 &lt;&lt;timed 3s&gt;&gt; They&#39;re ridiculing you. They open the door, and look back at you curiously. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s&gt;&gt; you&#39;re such a freak! WHY ARE YOU LIKE THIS! &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 3s&gt;&gt; they cock their head and dissapear, seeing you shy away. &lt;&lt;/timed&gt;&gt;
 
-You follow them through the open door into the [[living room]]</tw-passagedata><tw-passagedata pid="46" name="compliment their outfit" tags="" position="275,2125" size="100,100">you tell them you like their outfit. 
+You follow them through the open door into the [[living room]]</tw-passagedata><tw-passagedata pid="46" name="compliment their outfit" tags="" position="900,2525" size="100,100">you tell them you like their outfit. 
 
 &lt;&lt;timed 1s&gt;&gt; &lt;em&gt; thanks. you too. You dressed for the occasion, for sure. &lt;/em&gt; &lt;&lt;/timed&gt;&gt; 
 
@@ -922,7 +912,7 @@ You follow them through the open door into the [[living room]]</tw-passagedata><
 &lt;&lt;timed 4s&gt;&gt; &lt;em&gt; i&#39;m... gonna go now. &lt;/em&gt; they say. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4.5s&gt;&gt; Great work saying something. They dissapear. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; you follow them in the door into the [[living room]] &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="47" name="the bathroom" tags="" position="550,2425" size="100,100">&lt;h2&gt; You open the door to the bathroom and walk in on someone. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="47" name="the bathroom" tags="" position="2000,2750" size="100,100">&lt;h2&gt; You open the door to the bathroom and walk in on someone. &lt;/h2&gt;
 
 You apologise, but then notice they are resting their head on the toliet, looking very ill. 
 
@@ -935,7 +925,7 @@ you do that. &lt;&lt;/linkappend&gt;&gt;&lt;&lt;/linkappend&gt;&gt;&lt;&lt;/time
 
 you should
 [[get some help]]
-[[just leave it alone]]</tw-passagedata><tw-passagedata pid="48" name="find a drink" tags="" position="1150,2375" size="100,100">&lt;h2&gt; You stumble to the kitchen. you usually &lt;&lt;linkreplace &quot;don&#39;t drink&quot;&gt;&gt; drink way too fucking much &lt;&lt;/linkreplace&gt;&gt; like a loser. &lt;/h2&gt;
+[[just leave it alone]]</tw-passagedata><tw-passagedata pid="48" name="find a drink" tags="" position="3125,2600" size="100,100">&lt;h2&gt; You stumble to the kitchen. you usually &lt;&lt;linkreplace &quot;don&#39;t drink&quot;&gt;&gt; drink way too fucking much &lt;&lt;/linkreplace&gt;&gt; like a loser. &lt;/h2&gt;
 
 You could use it right about now. 
 
@@ -946,7 +936,7 @@ There are some some drinks around, and no one is paying attention to them. You c
 You spot a girl who looks very glamorous making a drink.
 
 [[take some vodka]]
-[[ask the girl for some]]</tw-passagedata><tw-passagedata pid="49" name="beer pong" tags="" position="225,2350" size="100,100">&lt;h2&gt;You approach a beer pong table. There&#39;s three people drinking and looking around for a fourth member. &lt;&lt;timed 3s&gt;&gt; They&#39;d probably rather it be anyone but you.&lt;&lt;/timed&gt;&gt;&lt;/h2&gt;   
+[[ask the girl for some]]</tw-passagedata><tw-passagedata pid="49" name="beer pong" tags="" position="1000,2850" size="100,100">&lt;h2&gt;You approach a beer pong table. There&#39;s three people drinking and looking around for a fourth member. &lt;&lt;timed 3s&gt;&gt; They&#39;d probably rather it be anyone but you.&lt;&lt;/timed&gt;&gt;&lt;/h2&gt;   
 
 &lt;&lt;timed 5s&gt;&gt; They agree to let you play. You&#39;ve worked out they all just met, too, but you still feel on the outside. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5.5s&gt;&gt; You&#39;d introduce yourself, but they probably don&#39;t care. &lt;&lt;/timed&gt;&gt;
@@ -959,7 +949,7 @@ You spot a girl who looks very glamorous making a drink.
 [[make them choose teams]]
 [[suggest the teams yourself]]
 &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="50" name="talk to your friend" tags="" position="875,2400" size="100,100">&lt;h2&gt; You find your friend amongst a group on the couch and approach them. What will you say? &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="50" name="talk to your friend" tags="" position="2625,2600" size="100,100">&lt;h2&gt; You find your friend amongst a group on the couch and approach them. What will you say? &lt;/h2&gt;
 &lt;&lt;timed 1s&gt;&gt; What&#39;s the right thing to say? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2s&gt;&gt; What&#39;s the right thing to say? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2.3s&gt;&gt; What&#39;s the right thing to say? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2.5s&gt;&gt; What&#39;s the right thing to say? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2.7s&gt;&gt; What&#39;s the right thing to say? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2.9s&gt;&gt; How do you greet someone?&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 3s&gt;&gt; You say hello and your voice sounds &lt;&lt;linkreplace &quot;weak&quot;&gt;&gt;&lt;&lt;linkreplace &quot;strange&quot;&gt;&gt;&lt;&lt;linkreplace &quot;hoarse&quot;&gt;&gt;&lt;&lt;linkreplace &quot;not like your own&quot;&gt;&gt; awfully fucking stupid, and so they ignore you. 
@@ -971,7 +961,7 @@ You spot a girl who looks very glamorous making a drink.
 &lt;&lt;/linkreplace&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="51" name="make them choose teams" tags="" position="100,2500" size="100,100">&lt;h2&gt; You&#39;re a complete pushover with no opinions and no personality, so you make them choose the teams. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="51" name="make them choose teams" tags="" position="875,3000" size="100,100">&lt;h2&gt; You&#39;re a complete pushover with no opinions and no personality, so you make them choose the teams. &lt;/h2&gt;
 
 &lt;&lt;timed 2s&gt;&gt; You get assinged a TEAMMATE. Great. One-on-one time with someone, you&#39;re famously great at that! &lt;&lt;/timed&gt;&gt;
 
@@ -984,7 +974,29 @@ You know this because, famously, everyone is always unhappy to have you around. 
 &lt;&lt;timed 11s&gt;&gt; You begin the game. While you play, do you:
 [[try to talk to your teammate]]
 [[say nothing to them]] 
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="you choose teams" tags="" position="350,2500" size="100,100"></tw-passagedata><tw-passagedata pid="53" name="say nothing to them" tags="" position="275,2625" size="100,100">&lt;h2&gt; You stay silent the entire game. &lt;/h2&gt; 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="you choose teams" tags="" position="1125,3000" size="100,100">
+
+Your opening story text goes here. It will remain visible beneath the overlay.
+
+&lt;&lt;silently&gt;&gt;
+  /* Photo 1 appears immediately */
+  &lt;&lt;run showPhoto(&quot;images/photo1.jpg&quot;, 3500)&gt;&gt;
+
+  /* Photo 2 appears at 4 seconds */
+  &lt;&lt;timed 4s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/bedroom.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  /* Photo 3 appears at 8 seconds */
+  &lt;&lt;timed 8s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/title.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  /* Photo 4 appears at 12 seconds */
+  &lt;&lt;timed 12s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/pixels.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="say nothing to them" tags="" position="1050,3125" size="100,100">&lt;h2&gt; You stay silent the entire game. &lt;/h2&gt; 
 
 &lt;&lt;timed 2s&gt;&gt; Why won&#39;t you say anything? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Hello?&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;They&#39;re trying to talk to you.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
@@ -1006,7 +1018,7 @@ You know this because, famously, everyone is always unhappy to have you around. 
 [[ensure you win]]
 &lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="54" name="let the other team win" tags="" position="75,2825" size="100,100">&lt;h2&gt; You decide to let the other team win, because you don&#39;t want to be unpopular. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="54" name="let the other team win" tags="" position="850,3325" size="100,100">&lt;h2&gt; You decide to let the other team win, because you don&#39;t want to be unpopular. &lt;/h2&gt;
 
 &lt;&lt;timed 6s&gt;&gt; You are drunk from chugging down loser drinks. It tastes like failure. Like you. &lt;&lt;/timed&gt;&gt;
 
@@ -1015,7 +1027,7 @@ You know this because, famously, everyone is always unhappy to have you around. 
 &lt;&lt;timed 15s&gt;&gt; Now your one reedeeming trait is useless because everyone thinks you are bad. &lt;&lt;linkappend &quot;Which you are.&quot;&gt;&gt; To your absolute core. &lt;&lt;/linkappend&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
 Things are bad enough. You should just
-[[give up now and just go home]] </tw-passagedata><tw-passagedata pid="55" name="ensure you win" tags="" position="350,2775" size="100,100">&lt;h2&gt; You decide to win, because you don&#39;t want to be a freak and a loser.. &lt;/h2&gt;
+[[give up now and just go home]] </tw-passagedata><tw-passagedata pid="55" name="ensure you win" tags="" position="1125,3275" size="100,100">&lt;h2&gt; You decide to win, because you don&#39;t want to be a freak and a loser.. &lt;/h2&gt;
 
 &lt;&lt;timed 6s&gt;&gt; You may have made your teammate happy, but the other team glares at you. &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 11s&gt;&gt; Not only were you no fun to be around, but you beat them, and now stare at them silently. &lt;&lt;/timed&gt;&gt;
 
@@ -1023,7 +1035,7 @@ Things are bad enough. You should just
 
 Things are bad enough. You should just
 [[give up now and just go home]] 
-</tw-passagedata><tw-passagedata pid="56" name="next time" tags="" position="850,3300" size="100,100">&lt;&lt;audio distantmusic stop&gt;&gt;/
+</tw-passagedata><tw-passagedata pid="56" name="next time" tags="" position="4150,3550" size="100,100">&lt;&lt;audio distantmusic stop&gt;&gt;/
 &lt;&lt;&lt;&lt;audio housechatter stop&gt;&gt;/
 &lt;&lt;audio crowdyell stop&gt;&gt; /
 &lt;&lt;audio ticktick volume 0.5&gt;&gt;/
@@ -1058,14 +1070,14 @@ It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; &lt;&lt;nobr&g
 you&#39;re not so sure you want to do this again, are you? you&#39;re sick of [[playing this game]]
 &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="57" name="sit down next to them" tags="" position="1075,2025" size="100,100"></tw-passagedata><tw-passagedata pid="58" name="decide to leave them alone" tags="" position="1200,2000" size="100,100">You stare at the screen. Something feels wrong.
+</tw-passagedata><tw-passagedata pid="57" name="sit down next to them" tags="" position="2825,2225" size="100,100"></tw-passagedata><tw-passagedata pid="58" name="decide to leave them alone" tags="" position="2950,2200" size="100,100">You stare at the screen. Something feels wrong.
 
 &lt;&lt;link &quot;Don&#39;t click this&quot;&gt;&gt;
     &lt;&lt;run startChaos()&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;div id=&quot;chaos-overlay&quot;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="59" name="stay quiet" tags="Dark" position="825,2650" size="100,100">&lt;h2&gt; You stay quiet, listening into the conversation. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="59" name="stay quiet" tags="Dark" position="2575,2850" size="100,100">&lt;h2&gt; You stay quiet, listening into the conversation. &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; You only catch glimpses: &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 3s&gt;&gt; Did you hear Michael came over last night? &lt;&lt;/timed&gt;&gt;  
@@ -1081,7 +1093,7 @@ Someone looks at you. They asked you a question. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="60" name="make a joke to make them all laugh" tags="" position="600,2650" size="100,100">&lt;&lt;audio &quot;:playing&quot; volume 0.5&gt;&gt;
+</tw-passagedata><tw-passagedata pid="60" name="make a joke to make them all laugh" tags="" position="2050,2975" size="100,100">&lt;&lt;audio &quot;:playing&quot; volume 0.5&gt;&gt;
 &lt;&lt;audio &quot;crickets&quot; play&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;audio &quot;:playing&quot; volume 1&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;h2&gt; You say something incredibly unfunny. &lt;/h2&gt;
@@ -1092,7 +1104,7 @@ So, so very, very very hot.
 
 you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] 
 
-</tw-passagedata><tw-passagedata pid="61" name="take some vodka" tags="" position="1125,2500" size="100,100">&lt;h2&gt; You approach the vodka like a lame ninja. &lt;&lt;timed 1s&gt;&gt; No one notices you, but only because you&#39;re irrelevant and not worth noticing. &lt;&lt;/timed&gt;&gt; &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="61" name="take some vodka" tags="" position="3025,2800" size="100,100">&lt;h2&gt; You approach the vodka like a lame ninja. &lt;&lt;timed 1s&gt;&gt; No one notices you, but only because you&#39;re irrelevant and not worth noticing. &lt;&lt;/timed&gt;&gt; &lt;/h2&gt;
 
 &lt;&lt;timed 3s&gt;&gt; You pick up the vodka, pour some into a cup and chug it down. You crinkle the cup and drop it on the floor like a fucking cool kid. &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 4s&gt;&gt; You&#39;re feeling slightly better. For a moment, your thoughts calm.... you feel almost &lt;em&gt; confident. &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
@@ -1109,7 +1121,7 @@ you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up
 
 
 
-</tw-passagedata><tw-passagedata pid="62" name="ask the girl for some" tags="" position="1400,2500" size="100,100">you approach and ask if she&#39;s got any drinks to spare. your voice shakes. 
+</tw-passagedata><tw-passagedata pid="62" name="ask the girl for some" tags="" position="3300,2800" size="100,100">you approach and ask if she&#39;s got any drinks to spare. your voice shakes. 
 
 she turns around and sizes you up. 
 
@@ -1118,7 +1130,7 @@ do you know who i am?
 you think for a second... no one is dressed quite like her.
 
 [[i don&#39;t know]]
-[[you&#39;re the birthday girl!]]</tw-passagedata><tw-passagedata pid="63" name="no it&#39;s not" tags="" position="1350,1825" size="100,100"></tw-passagedata><tw-passagedata pid="64" name="sorry" tags="" position="1425,2250" size="100,100"></tw-passagedata><tw-passagedata pid="65" name="i don&#39;t know" tags="" position="1100,2775" size="100,100">&lt;h2&gt; She laughs and looks you up and down. You&#39;ve clearly done something wrong. &lt;/h2&gt;
+[[you&#39;re the birthday girl!]]</tw-passagedata><tw-passagedata pid="63" name="no it&#39;s not" tags="" position="4800,975" size="100,100"></tw-passagedata><tw-passagedata pid="64" name="sorry" tags="" position="4875,1400" size="100,100"></tw-passagedata><tw-passagedata pid="65" name="i don&#39;t know" tags="" position="3100,3125" size="100,100">&lt;h2&gt; She laughs and looks you up and down. You&#39;ve clearly done something wrong. &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; It&#39;s my birthday, dude. &lt;/em&gt;  She says. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Just so you know&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;That was really fucking obvious.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 7s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.2s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.2s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 8.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.6s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;  Rude! Rude! 
@@ -1133,7 +1145,7 @@ you think for a second... no one is dressed quite like her.
 
 &lt;&lt;timed 10s&gt;&gt;
 you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]]  &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="66" name="you&#39;re the birthday girl!" tags="Dark" position="1300,2875" size="100,100">&lt;h2&gt; She laughs and looks you up and down. She has no idea who you are. You&#39;ve clearly done something wrong. &lt;/h2&gt; 
+</tw-passagedata><tw-passagedata pid="66" name="you&#39;re the birthday girl!" tags="Dark" position="3275,3075" size="100,100">&lt;h2&gt; She laughs and looks you up and down. She has no idea who you are. You&#39;ve clearly done something wrong. &lt;/h2&gt; 
 
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; How did you know that, dude? &lt;/em&gt;  She says. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Just so you know&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;That was really fucking creepy.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
@@ -1151,14 +1163,14 @@ you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up
 
 
 
-</tw-passagedata><tw-passagedata pid="67" name="get some help" tags="" position="475,2550" size="100,100">you go outside.
+</tw-passagedata><tw-passagedata pid="67" name="get some help" tags="" position="1925,2875" size="100,100">you go outside.
 hey can someone help me in here?
 someone nearby comes in. 
 
 oh, lol, it&#39;s sarah. dude she&#39;s fine. bit of an overreaction. first party, buddy?
 
 you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] 
-</tw-passagedata><tw-passagedata pid="68" name="just leave it alone" tags="" position="612.5,2550" size="100,100">you decide to leave her, and find somewhere else to go. 
+</tw-passagedata><tw-passagedata pid="68" name="just leave it alone" tags="" position="2075,2875" size="100,100">you decide to leave her, and find somewhere else to go. 
 as you exit the bathroom, however, someone looks inside.
 
 dude, sarah&#39;s totally passed out in here!
@@ -1167,15 +1179,15 @@ man, why didn&#39;t you say anything?
 everyone is looking at you. 
 
 you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] 
-</tw-passagedata><tw-passagedata pid="69" name="better option" tags="nicer" position="1275,3675" size="100,100">Someone&#39;s invited you to a party, it&#39;s about the time to get ready, you reckon. You&#39;re pretty keen to go. 
+</tw-passagedata><tw-passagedata pid="69" name="better option" tags="nicer" position="3025,3875" size="100,100">Someone&#39;s invited you to a party, it&#39;s about the time to get ready, you reckon. You&#39;re pretty keen to go. 
 Would you rather wear:
 
 [[something comfortable-&gt;something comfortable2]] 
-[[something fancy-&gt;something fancy2]]</tw-passagedata><tw-passagedata pid="70" name="have it your way" tags="nicer NOT-NICE" position="1400,3675" size="100,100">have it your way...
+[[something fancy-&gt;something fancy2]]</tw-passagedata><tw-passagedata pid="70" name="have it your way" tags="nicer NOT-NICE" position="3150,3875" size="100,100">have it your way...
 
 &lt;&lt;timed 5s&gt;&gt;
 &lt;&lt;goto [[launch]]&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="something comfortable2" tags="nicer" position="1275,3800" size="100,100"></tw-passagedata><tw-passagedata pid="72" name="something fancy2" tags="nicer" position="1400,3800" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. </tw-passagedata><tw-passagedata pid="73" name="what to wear" tags="" position="1950,900" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="StoryInit" tags="" position="1050,700" size="100,100">
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="something comfortable2" tags="nicer" position="3025,4000" size="100,100"></tw-passagedata><tw-passagedata pid="72" name="something fancy2" tags="nicer" position="3150,4000" size="100,100">The time is upon thee. You have &lt;em&gt; arrived &lt;/em&gt; and there are people here. About four around the front, but all the music seems to be inside. Everyone is looking at you with dismay. </tw-passagedata><tw-passagedata pid="73" name="what to wear" tags="" position="4475,900" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="StoryInit" tags="" position="2800,425" size="100,100">
 Macro.add(&#39;error&#39;, {
   handler() {
     const message = this.args[0];
@@ -1197,7 +1209,7 @@ Macro.add(&#39;error&#39;, {
 &lt;&lt;cacheaudio &quot;earring&quot; &quot;audio/earring.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;housechatter&quot; &quot;audio/housechatter.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;crowdyell&quot; &quot;audio/crowdyell.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;crickets&quot; &quot;audio/crickets.mp3&quot;&gt;&gt; </tw-passagedata><tw-passagedata pid="75" name="something nice" tags="d" position="225,450" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
+&lt;&lt;cacheaudio &quot;crickets&quot; &quot;audio/crickets.mp3&quot;&gt;&gt; </tw-passagedata><tw-passagedata pid="75" name="something nice" tags="d" position="1775,650" size="100,100">&lt;&lt;audio ticktick stop&gt;&gt; 
 &lt;&lt;audio getchanged play&gt;&gt;
 You get changed into your nicest outfit&lt;&lt;timed 1s&gt;&gt; ...and look into the mirror. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; Why do you look like that? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
@@ -1222,27 +1234,29 @@ why are you like this
 &lt;&lt;timed 30s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="Untitled Passage" tags="" position="1375,850" size="100,100">&lt;div id=&quot;scene-container&quot;&gt;
+&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="Untitled Passage" tags="" position="4675,125" size="100,100">&lt;div id=&quot;scene-container&quot;&gt;
     &lt;img class=&quot;scene-layer&quot; src=&quot;images/bedroom.jpg&quot;&gt;
     &lt;img class=&quot;scene-layer&quot; src=&quot;images/title.jpg&quot;&gt;
     &lt;img class=&quot;scene-layer&quot; src=&quot;images/pixels.jpg&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="Untitled Passage 2" tags="title-page" position="325,50" size="100,100">&lt;&lt;timed 1s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 2s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
-&lt;em&gt; &#39;Why are you like this?&#39; &lt;/em&gt; 
-&lt;&lt;timed 1s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 2s&gt;&gt; WHY ARE YOU LIKE THIS? &lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="Untitled Passage 2" tags="title-page" position="2075,250" size="100,100">
+Your opening story text goes here. It will remain visible beneath the overlay.
 
-&lt;&lt;timed 7s&gt;&gt; WARNING: there&#39;s no escape. &lt;&lt;/timed&gt;&gt;
-[[Continue-&gt;launch]] 
+&lt;&lt;silently&gt;&gt;
+  &lt;&lt;run showPhoto(&quot;images/bedroom.jpg&quot;, 3500)&gt;&gt;
 
-&lt;&lt;timed 3s&gt;&gt; by Al Pembroke &lt;&lt;/timed&gt;&gt;
-&lt;i class=&quot;fa-solid fa-exclamation&quot;&gt;&lt;/i&gt;
+  &lt;&lt;timed 4s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/bedroom.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
 
-&lt;div id=&quot;scene-container&quot;&gt;
-    &lt;img class=&quot;scene-layer&quot; src=&quot;images/bedroom.jpg&quot;&gt;
-    &lt;img class=&quot;scene-layer&quot; src=&quot;images/title.jpg&quot;&gt;
-    &lt;img class=&quot;scene-layer&quot; src=&quot;images/pixels.jpg&quot;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="playing this game" tags="" position="850,3425" size="100,100">if only there was an option, an easy way out, that let you [[turn the thoughts off]]</tw-passagedata><tw-passagedata pid="79" name="sit down" tags="" position="1550,1625" size="100,100"></tw-passagedata><tw-passagedata pid="80" name="leave them alone" tags="Dark" position="1000,2650" size="100,100">&lt;h2&gt; You turn away and walk back to the living room. Alone. Good one! &lt;/h2&gt;
+  /* Photo 3 appears at 8 seconds */
+  &lt;&lt;timed 8s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/title.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 12s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/pixels.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="playing this game" tags="" position="2600,3850" size="100,100">if only there was an option, an easy way out, that let you [[turn the thoughts off]]</tw-passagedata><tw-passagedata pid="79" name="sit down" tags="" position="5000,775" size="100,100"></tw-passagedata><tw-passagedata pid="80" name="leave them alone" tags="Dark" position="2725,2875" size="100,100">&lt;h2&gt; You turn away and walk back to the living room. Alone. Good one! &lt;/h2&gt;
 
 You take a few deep breaths.
 
@@ -1256,13 +1270,13 @@ Your phone goes off. your friend has texted you:
 &lt;&lt;timed 4s&gt;&gt; You look over at them. They wave with a smile and laugh. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s&gt;&gt; They&#39;re definetly making fun of you. Suddenly, it feels like EVERYONE is making fun of you. Everyone here is looking at you. 
 
-You&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="sit next to them" tags="Dark" position="875,2525" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
+You&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="sit next to them" tags="Dark" position="2625,2725" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
 
 &lt;h2&gt; You sit with a group of people who &lt;&lt;linkprepend &quot;don&#39;t want you there&quot;&gt;&gt; really, really &lt;&lt;/linkprepend&gt;&gt;  &lt;/h2&gt;
 Your friend introduces you &lt;&lt;linkappend &quot;which is a nice thing to do&quot;&gt;&gt; out of pity.  Then, everyone turns to you. 
 
 [[stay quiet]]
-[[make a joke to make them all laugh]]&lt;&lt;/linkappend&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="suggest the teams yourself" tags="" position="225,2475" size="100,100">&lt;h2&gt; You choose the teams, as you want to seem decisive and sure of yourself. You&#39;re not. &lt;/h2&gt;
+[[make a joke to make them all laugh]]&lt;&lt;/linkappend&gt;&gt;</tw-passagedata><tw-passagedata pid="82" name="suggest the teams yourself" tags="" position="1000,2975" size="100,100">&lt;h2&gt; You choose the teams, as you want to seem decisive and sure of yourself. You&#39;re not. &lt;/h2&gt;
 
 &lt;&lt;timed 2s&gt;&gt; Who do you think you&#39;re fooling? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s&gt;&gt; Because it&#39;s not them. &lt;&lt;/timed&gt;&gt;
 
@@ -1274,7 +1288,7 @@ You know this because, famously, everyone is always unhappy to have you around. 
 &lt;&lt;timed 11s&gt;&gt; You begin the game. While you play, do you:
 [[try to talk to your teammate]]
 [[say nothing to them]] 
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="try to talk to your teammate" tags="" position="150,2675" size="100,100">&lt;h2&gt; You try to make conversation throughout the entire game. &lt;/h2&gt; 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="83" name="try to talk to your teammate" tags="" position="925,3175" size="100,100">&lt;h2&gt; You try to make conversation throughout the entire game. &lt;/h2&gt; 
 
 &lt;&lt;timed 2s&gt;&gt; Why won&#39;t you say anything good? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Wrong dialogue option.&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;They think you&#39;re really weird.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
