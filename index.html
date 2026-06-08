@@ -387,7 +387,7 @@ $(document).on(':passagestart', function (ev) {
     var p = vid.play();
     if (p !== undefined) { p.catch(function () {}); }
   }
-});</script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="ending" color="blue"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="2025,475" size="200,100">&lt;&lt;audio waitingroom stop&gt;&gt; &lt;&lt;audio distantmusic stop&gt;&gt;
+});</script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="ending" color="blue"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="2025,475" size="200,100">&lt;&lt;audio waitingroom stop&gt;&gt; &lt;&lt;audio distantmusic stop&gt;&gt; &lt;&lt;audio &quot;housechatter&quot; stop&gt;&gt; &lt;&lt;audio &quot;crowdyell&quot; stop&gt;&gt; 
 &lt;&lt;audio ticktick volume 0.5&gt;&gt;\
 &lt;&lt;audio ticktick play&gt;&gt;\
 &lt;h2&gt; It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; a party, how much could there be for you to worry about?&lt;/h2&gt;
@@ -863,7 +863,7 @@ You should:
 
 &lt;&lt;timed 2.5s&gt;&gt; &lt;em&gt; Why are you sneaking around like that? You almost let the dog out. if you knocked, someone would&#39;ve let you in. &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt; You could&#39;ve killed a dog, you could&#39;ve killed a dog. &lt;&lt;/timed?&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt; You could&#39;ve killed a dog, you could&#39;ve killed a dog. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt;  YOU COULD&#39;VE KILLED A DOG YOU MONSTER YOU COULD&#39;VE KILLED A DOG YOU MONSTER &lt;&lt;/timed&gt;&gt;
 
 [[apologise]]
@@ -875,14 +875,15 @@ You didn&#39;t mean to upset him. Or try to let the dog out. You were just tryin
 &lt;&lt;timed 3s&gt;&gt; You sound like an idiot. You sound like a child. &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 4s&gt;&gt; Have you no self-respect? &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 7s&gt;&gt; He says: &lt;em&gt; Stop being so patehtic. What&#39;s your name? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt; He says: &lt;em&gt; Stop being so pathetic. What&#39;s your name? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
 
-[[tell him the truth-&gt;another]]
-[[give up now and just go home]]
+&lt;&lt;timed 10s&gt;&gt; [[tell him your name-&gt;another]]
+[[give up now and just go home]] &lt;&lt;/timed&gt;&gt;
 
 
 &lt;&lt;timed 7s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;HE WANTS TO KNOW YOUR NAME&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="36" name="say nothing" tags="Dark" position="2125,2000" size="100,100">You stare back at him. He raises his eyebrows expectantly. 
+&lt;&lt;timed 8s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;TO REPORT YOU TO THE AUTHORITIES); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;TO REPORT YOU TO EVERYONE HE KNOWS); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="say nothing" tags="Dark" position="2125,2000" size="100,100">You stare back at him. He raises his eyebrows expectantly. 
 &lt;&lt;timed 1.5s&gt;&gt; &lt;em&gt; Well? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
 
 &lt;timed 3s&gt;&gt; YOU SHOULD ANSWER HIM, ANSWER HIM ANSWER HIM. WHY IS HE LOOKING AT YOU LIKE THAT? &lt;&lt;/timed&gt;&gt;
@@ -897,7 +898,7 @@ He has anger in his eyes and voice. You shouldn&#39;t have come here. You want t
 &lt;h2&gt; You enter a loud party. &lt;/h2&gt;
 
 You are an alien who needs to blend in. 
-The best first step is to: &lt;&lt;timed 4s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.3s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.6s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.7s&gt;&gt; just give up and go the fuck home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.9s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 5.3s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 5.6s&gt;&gt; go home &lt;&lt;/timed&gt;&gt;/ &lt;&lt;timed 6.7s&gt;&gt; get out&lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6.2s&gt;&gt; just give up and go the fuck home &lt;&lt;/timed&gt;&gt; 
+The best first step is to: &lt;&lt;timed 4s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.3s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.6s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.7s&gt;&gt; just give up and go the fuck home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4.9s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 5.3s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 5.6s&gt;&gt; go home &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6.7s&gt;&gt; get out&lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6.2s&gt;&gt; just give up and go the fuck home &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 7s&gt;&gt; get out &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; get out &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; get out &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 10s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 10.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 11s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 11.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 13s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 13.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 14s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 14.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 15s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 15.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 16s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 16.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 17s&gt;&gt; get out &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 17.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 18s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 18.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 19s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 19.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 20s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 20.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 21s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 21.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 22s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 22.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 23s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 23.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 24s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 24.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 25s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 25.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 26s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 26.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 27s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 27.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 28s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 28.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 29s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 29.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 30s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 30.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 31s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 31.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 32s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 32.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 33s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 33.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 34s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 34.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 35s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 35.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 36s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 36.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 37s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 37.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 38s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 38.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 39s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 39.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 40s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 40.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 41s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 41.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 42s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 42.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 43s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 43.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 44s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 44.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 45s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 45.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 46s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 46.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 47s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 47.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 48s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 48.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 49s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 49.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 50s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 50.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 51s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 51.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 52s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 52.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 53s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 53.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 54s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 54.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 55s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 55.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 56s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 56.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 57s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 57.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 58s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 58.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 59s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 59.5s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 60s&gt;&gt; get out &lt;&lt;/timed&gt;&gt;
 
 &lt;em&gt; 
@@ -926,7 +927,80 @@ You tell him your name. It&#39;s &lt;&lt;textbox &quot;$playerName&quot; &quot;&
 
 &lt;&lt;timed 11s&gt;&gt; [[give up now and just go home]]
 [[call your friend]]
-[[climb through the window-&gt;living room]]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="give up now and just go home" tags="" position="2150,3475" size="100,100">You walk home, thinking over all the things you&#39;ll do [[next time-&gt;launch]]</tw-passagedata><tw-passagedata pid="40" name="ring them again" tags="Dark" position="1200,1825" size="100,100">&lt;&lt;audio heywhatsup play&gt;&gt; 
+[[climb through the window-&gt;living room]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="give up now and just go home" tags="" position="2150,3475" size="100,100">&lt;&lt;timed 1s&gt;&gt; Maybe if you made different choices, things would be different. &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 2s&gt;&gt; But you didn&#39;t. &lt;&lt;/timed&gt;&gt;
+
+&lt;h2&gt; Why &lt;&lt;timed 3s&gt;&gt; are &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4s&gt;&gt; you &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 5s&gt;&gt; like &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6s&gt;&gt; this? &lt;&lt;/timed&gt;&gt; &lt;/h2&gt;
+
+&lt;&lt;timed 7s&gt;&gt; You walk home. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 10s&gt;&gt; When you go to bed, you can&#39;t sleep. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 8s&gt;&gt; You lay awake all night, thinking over all the things you&#39;ll do [[next time-&gt;launch]]. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;silently&gt;&gt;
+&lt;&lt;timed 1s&gt;&gt;
+  &lt;&lt;run showPhoto(&quot;images/1.jpg&quot;, 3500)&gt;&gt; &lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 1.5s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/2.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 2s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/3.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+  
+  &lt;&lt;timed 2.5s&gt;&gt;
+  &lt;&lt;run showPhoto(&quot;images/1.jpg&quot;, 3500)&gt;&gt; &lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 3s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/2.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 3.5s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/3jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+      &lt;&lt;timed 4.5s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/4.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 5s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/5.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+    &lt;&lt;timed 6s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/6.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+      &lt;&lt;timed 6.5s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/7.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+    &lt;&lt;timed 7s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/8.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+     &lt;&lt;timed 8s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/9.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+      &lt;&lt;timed 9s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/10.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+      &lt;&lt;timed 10s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/11.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+       &lt;&lt;timed 11s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/12.jpg&quot;, 3500)&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    
+      &lt;&lt;timed 13s&gt;&gt;
+    &lt;&lt;run showPhoto(&quot;images/13.jpg&quot;, 3500)&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="ring them again" tags="Dark" position="1200,1825" size="100,100">&lt;&lt;audio heywhatsup play&gt;&gt; 
 &lt;h2&gt; They actually answered. &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; Oh god, who&#39;s going to speak first? You or them? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2.5s&gt;&gt; say something &lt;&lt;timed&gt;&gt; say something &lt;&lt;/timed&gt;&gt; say something &lt;&lt;/timed&gt;&gt;
