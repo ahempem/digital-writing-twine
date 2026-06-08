@@ -333,7 +333,13 @@ background-attachment: fixed;
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to   { opacity: 1; transform: scale(1); }
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.showPhoto = function(src, displayTime) {
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">['videos/plexus.mp4', 'videos/basic.mp4', 'videos/looping.mp4'].forEach(function (s) {
+  var v = document.createElement('video');
+  v.preload = 'auto';
+  v.muted = true;
+  v.src = s;            // begins buffering in the background
+});
+window.showPhoto = function(src, displayTime) {
   var overlay = document.getElementById('photo-overlay');
 
   /* Create the overlay once, if it doesn't already exist */
@@ -381,7 +387,7 @@ $(document).on(':passagestart', function (ev) {
     var p = vid.play();
     if (p !== undefined) { p.catch(function () {}); }
   }
-});</script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="ending" color="blue"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="2025,475" size="200,100">&lt;&lt;audio waitingroom stop&gt;&gt;
+});</script><tw-tag name="nicer" color="yellow"></tw-tag><tw-tag name="NOT-NICE" color="blue"></tw-tag><tw-tag name="Dark" color="orange"></tw-tag><tw-tag name="d" color="orange"></tw-tag><tw-tag name="title-page" color="purple"></tw-tag><tw-tag name="dark" color="yellow"></tw-tag><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="ending" color="blue"></tw-tag><tw-passagedata pid="1" name="launch" tags="Dark forest" position="2025,475" size="200,100">&lt;&lt;audio waitingroom stop&gt;&gt; &lt;&lt;audio distantmusic stop&gt;&gt;
 &lt;&lt;audio ticktick volume 0.5&gt;&gt;\
 &lt;&lt;audio ticktick play&gt;&gt;\
 &lt;h2&gt; It&#39;s &lt;span class=&quot;strike&quot;&gt; just &lt;/span&gt; a party, how much could there be for you to worry about?&lt;/h2&gt;
@@ -494,26 +500,21 @@ Wow, you made the right choice. You pumped up and motivated. But what if it does
 &lt;&lt;timed 6s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="something comfortable" tags="Dark" position="2425,675" size="100,100">&lt;&lt;audio ticktick volume 0.2&gt;&gt; 
+&lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GET OUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="something comfortable" tags="Dark" position="2425,675" size="100,100">&lt;&lt;audio ticktick volume 0.2&gt;&gt;
+&lt;&lt;audio getchanged play&gt;&gt;
 &lt;h2&gt; You search through your cupboard &lt;/h2&gt;
 You  choose &lt;&lt;linkreplace &quot;a pair of tracksuit pants&quot;&gt;&gt;&lt;&lt;linkreplace &quot;tattered jeans&quot;&gt;&gt; something generally unimpressive, much like yourself. &lt;&lt;/linkreplace&gt;&gt; 
 &lt;&lt;/linkreplace&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;em&gt; Why do you look like that? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 6s&gt;&gt; You&#39;re going to be way unddressed. That&#39;s a bit rude, if you think about it. &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 6.4s&gt;&gt; (which you do, a lot and a lot) &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt; You&#39;re going to be way unddressed. That&#39;s a bit rude, if you think about it. &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 6.4s&gt;&gt; (which you do, a lot and a lot)&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6.8s&gt;&gt; undressed = rude &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.0s&gt;&gt; rude = kicked out &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.1s&gt;&gt; you&#39;re going to get kicked out &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 8.3s&gt;&gt; you&#39;re going to get kicked out &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 8.1s&gt;&gt; you&#39;re going to get kicked out &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 8.1s&gt;&gt; you&#39;re going to get kicked out &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 8s&gt;&gt; Should you even go? You hardly want to [[leave the house]] &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.4s&gt;&gt; especially if you&#39;re going to go just to get kicked out for being underdressed &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 15s&gt;&gt; Stuck in your thoughts, hey? Trying to make sense of them? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt; Stop thinking, you just have to leave the house. If you can&#39;t do that, you can&#39;t do anything. &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 9s&gt;&gt; Literally all you have to do is just [[leave the house]]. &lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 10s&gt;&gt; &lt;strong&gt; What&#39;s so bad about leaving the house? &lt;/strong&gt;&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 15s&gt;&gt;
-Why can&#39;t you just [[leave the house]]? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 20s&gt;&gt; &lt;strong&gt; What&#39;s so bad about leaving the house? &lt;/strong&gt;&lt;&lt;/timed&gt;&gt;
 
 
 &lt;div class=&quot;title&quot;&gt;
@@ -524,28 +525,26 @@ why are you like this
 &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 
-&lt;&lt;timed 12.5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 16s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;IT&#39;S NOT SAFE OUT THERE&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST GET GOING TO THE PARTY&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHAT&#39;S WRONG? THERE&#39;S NO OPTION TO LEAVE THE HOUSE?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;silently&gt;&gt;
-&lt;&lt;timed 11s&gt;&gt;
+&lt;&lt;timed 26s&gt;&gt;
   &lt;&lt;run showPhoto(&quot;images/ago1.jpg&quot;, 3500)&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
-  &lt;&lt;timed 11.5s&gt;&gt;
+  &lt;&lt;timed 26.5s&gt;&gt;
     &lt;&lt;run showPhoto(&quot;images/ago2.jpg&quot;, 3500)&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 
-  &lt;&lt;timed 12s&gt;&gt;
+  &lt;&lt;timed 27s&gt;&gt;
     &lt;&lt;run showPhoto(&quot;images/ago3.jpg&quot;, 3500)&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
   
 &lt;&lt;/silently&gt;&gt;
 
-&lt;&lt;timed 16s&gt;&gt; You don&#39;t leave straight away, so you keep thinking about what you&#39;re wearing, looking in the mirror again and again and again and again and again and again and again and again &lt;&lt;/timed&gt;&gt;  &lt;&lt;timed 15.9s&gt;&gt; and again and again and again and again and again and again and again and again and again and again &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 18s&gt;&gt; AND AGAIN ANDAGAINANDAGAINANDANDAND &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 20s&gt;&gt; &lt;div class=&quot;title&quot;&gt;
+&lt;&lt;timed 29s&gt;&gt; You don&#39;t leave straight away, so you keep thinking about what you&#39;re wearing, looking in the mirror again and again and again and again and again and again and again and again &lt;&lt;/timed&gt;&gt;  &lt;&lt;timed 29.9s&gt;&gt; and again and again and again and again and again and again and again and again and again and again &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 30s&gt;&gt; AND AGAIN ANDAGAINANDAGAINANDANDAND &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 31s&gt;&gt; &lt;div class=&quot;title&quot;&gt;
 you don&#39;t know what&#39;s going to happen when you [[leave the house]]
 if you do [[leave the house]] you might die
 why are you like this?
@@ -567,18 +566,17 @@ just [[leave the house]]
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 22s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 30s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 31s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHAT ARE YOU GOING TO WEAR?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 </tw-passagedata><tw-passagedata pid="19" name="leave the house" tags="Dark" position="2075,850" size="100,100">&lt;&lt;audio getchanged stop&gt;&gt;
-&lt;&lt;audio earring play&gt;&gt;
+&lt;&lt;audio earring volume 0.7 play&gt;&gt;
 
 &lt;h2&gt; You collect your stuff and step outside. It&#39;s loud, too bright yet too dark. &lt;/h2&gt;
 You take a deep &lt;&lt;link &quot;breath&quot;&gt;&gt;&lt;&lt;audio &quot;heartandbreathe&quot; play&gt;&gt; &lt;&lt;/link&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt; You feel your heart thumping in your chest. &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 5s&gt;&gt; But there&#39;s no time to freak out. You check the &lt;&lt;linkappend &quot;location&quot;&gt;&gt;. It&#39;s a walk or a bus trip. &lt;&lt;/linkappend&gt;&gt; 
+&lt;&lt;timed 6s&gt;&gt; You feel your heart thumping in your chest. &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt; But there&#39;s no time to freak out. You check the &lt;&lt;linkappend &quot;location&quot;&gt;&gt;. It&#39;s a walk or a bus trip. &lt;&lt;/linkappend&gt;&gt; 
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 8s&gt;&gt; They&#39;re both terrible options &lt;&lt;timed 10s&gt;&gt; because everything is a terrible option &lt;&lt;/timed&gt;&gt; but you decide to: 
@@ -672,11 +670,54 @@ or &lt;em&gt; [[something upbeat]] &lt;/em&gt; &lt;&lt;timed 7s&gt;&gt; &lt;em&g
 
 
 
-</tw-passagedata><tw-passagedata pid="23" name="something melancoholy" tags="Dark" position="1950,1075" size="100,100">&lt;&lt;audio &quot;heartandbreathe stop&quot;&gt;&gt; 
+</tw-passagedata><tw-passagedata pid="23" name="something melancoholy" tags="Dark" position="1950,1075" size="100,100">&lt;&lt;audio &quot;heartandbreathe&quot; stop&gt;&gt; 
 &lt;&lt;audio &quot;somethingsad&quot; play&gt;&gt;
-You play a mellow tune that reminds you of your inner failings. You whisper along to it as you walk....
-You see a text from your friend that you should probably
-&lt;em&gt; [[open]] &lt;/em&gt;
+&lt;h2&gt; You play a mellow tune that reminds you of your inner failings. &lt;/h2&gt;
+&lt;&lt;timed 3s&gt;&gt; of which there are so so so so so very many. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 4s&gt;&gt; Shall we list them? &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 5s&gt;&gt; 1. You&#39;re not good enough at literally anything. Name one talent. What, beer pong? &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt; 2. You&#39;re too quiet and boring to be around. &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 6.5s&gt;&gt;When you do speak, you&#39;re far too serious. &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 8s&gt;&gt; 3. You always say the wrong thing. &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.5s&gt;&gt; Remember that time you told someone a your mum joke and their mum just died? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; That&#39;s why you should never open your mouth. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 10s&gt;&gt; 4. You&#39;re not smart enough to keep up with people. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 11s&gt;&gt; 5. You&#39;re too sensitive and overreact to everything. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 12s&gt;&gt; 6. You&#39;re unattractive and people notice. &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 12.5s&gt;&gt; In fact, it&#39;s the first thing they notice about you. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 14.5s&gt;&gt; 7. You&#39;re a burden to the people who do, for some reason, care about you. You push them all away because they get so exhausted of you. &lt;&lt;/timed&gt;&gt;
+
+
+&quot;You can&#39;t do anything right.&quot;
+&quot;You&#39;re too needy in relationships.&quot;
+&quot;You&#39;re lazy and never live up to your potential.&quot;
+&quot;You&#39;re awkward and people can tell.&quot;
+&quot;You&#39;re not interesting enough to hold a conversation.&quot;
+&quot;You always let people down eventually.&quot;
+&quot;You&#39;re too anxious to handle normal situations.&quot;
+&quot;You&#39;re bad with money and irresponsible.&quot;
+&quot;You&#39;re not as talented as everyone else.&quot;
+&quot;You&#39;re too emotional and can&#39;t control yourself.&quot;
+&quot;You&#39;re forgettable — people don&#39;t really think about you.&quot;
+&quot;You&#39;re a pushover and can&#39;t stand up for yourself.&quot;
+&quot;You&#39;re selfish even when you try not to be.&quot;
+&quot;You&#39;re not disciplined enough to finish what you start.&quot;
+&quot;You&#39;re annoying and people just tolerate you.&quot;
+&quot;You&#39;re not good at your job and they&#39;ll figure it out.&quot;
+&quot;You&#39;re too dependent on other people&#39;s approval.&quot;
+&quot;You&#39;re physically out of shape and unhealthy.&quot;
+&quot;You overthink everything and ruin it.&quot;
+&quot;You&#39;re not a good friend / partner / parent.&quot;
+&quot;You&#39;re weird and don&#39;t fit in anywhere.&quot;
+&quot;You&#39;re a failure compared to where you should be by now.&quot;
+&quot;There&#39;s just something fundamentally wrong with you.&quot;
+You whisper along to it as you walk....
+&lt;&lt;timed 20s&gt;&gt; 20. You see a text from your friend that you should probably
+&lt;em&gt; [[open]] &lt;/em&gt; &lt;&lt;/timed&gt;&gt; 
 </tw-passagedata><tw-passagedata pid="24" name="open" tags="Dark" position="2150,1275" size="100,100">&lt;&lt;audio bus stop&gt;&gt;
 &lt;h2&gt; You open the text with shaky hands. &lt;/h2&gt;
 They want to know if you&#39;re coming, probably because they regret inviting you, but they are too nervous to say anything, or to univinte you. 
@@ -838,12 +879,7 @@ Who the fuck do you think you are?
 
 &lt;&lt;timed 6s&gt;&gt; Was that five or six? It was five but maybe it was six? &lt;&lt;/timed&gt;&gt;
 
-
-
-&lt;&lt;timed 10s&gt;&gt; Of course they do. Who the hell &lt;strong&gt; knocks?! &lt;/strong&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 10s&gt;&gt; It&#39;s really loud out here, but it seems like it&#39;s even louder inside. Are you going to fucking stand here forever, though? People are LOOKING AT YOU. &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 10s&gt;&gt; WHY ARE YOU JUST STANDING THERE? GET INSIDE &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 10s&gt;&gt; it looks really stuffy in there &lt;&lt;/timed&gt;&gt; You walk into the [[living room]] &lt;&lt;timed 10s&gt;&gt; but you really really do not want to &lt;&lt;/timed&gt;&gt; </tw-passagedata><tw-passagedata pid="33" name="no" tags="Dark" position="1925,1800" size="100,100">&lt;h2&gt; You say you&#39;re not there. What? How is that possible? &lt;/h2&gt;
+&lt;&lt;timed 10s&gt;&gt;  You walk into the [[living room]] &lt;&lt;timed 10s&gt;&gt; but you really really do not want to &lt;&lt;/timed&gt;&gt; </tw-passagedata><tw-passagedata pid="33" name="no" tags="Dark" position="1925,1800" size="100,100">&lt;h2&gt; You say you&#39;re not there. What? How is that possible? &lt;/h2&gt;
 What a stupid answer. 
 &lt;&lt;timed 4s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3.2s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s&gt;&gt; WHAT&#39;S YOUR PROBLEM? &lt;&lt;/timed&gt;&gt;
 &lt;em&gt; Yes, there is. What the fuck are you doing, dude? You could&#39;ve let the dog out.&lt;/em&gt; 
@@ -1298,9 +1334,8 @@ Macro.add(&#39;error&#39;, {
 
 &lt;&lt;timed 7s&gt;&gt; But to not go, that&#39;s you being a pussy, actually. Why are you such a baby? It can&#39;t be that hard. &lt;&lt;/timed&gt;&gt; 
 
-&lt;&lt;timed 9s&gt;&gt; Literally all you have to do is just [[leave the house]]. &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 10s&gt;&gt; &lt;strong&gt; What&#39;s so bad about leaving the house? &lt;/strong&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt; &lt;strong&gt; What&#39;s so bad about leaving the house? &lt;/strong&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 15s&gt;&gt;
 Why can&#39;t you just [[leave the house]]? &lt;&lt;/timed&gt;&gt;
 
@@ -1320,14 +1355,14 @@ why are you like this
 &lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;silently&gt;&gt;
-&lt;&lt;timed 11s&gt;&gt;
+&lt;&lt;timed 13.5s&gt;&gt;
   &lt;&lt;run showPhoto(&quot;images/ago1.jpg&quot;, 3500)&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
-  &lt;&lt;timed 11.5s&gt;&gt;
+  &lt;&lt;timed 14s&gt;&gt;
     &lt;&lt;run showPhoto(&quot;images/ago2.jpg&quot;, 3500)&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 
-  &lt;&lt;timed 12s&gt;&gt;
+  &lt;&lt;timed 14.5s&gt;&gt;
     &lt;&lt;run showPhoto(&quot;images/ago3.jpg&quot;, 3500)&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
   
@@ -1343,6 +1378,7 @@ Why &lt;&lt;timed 1s&gt;&gt; are &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2s&gt;&gt;
 &lt;&lt;timed 8s&gt;&gt;
   Would you like to go to a party?
   &lt;&lt;link &quot;Yes&quot;&gt;&gt;
+  &lt;&lt;audio &quot;waitingroom&quot; stop&gt;&gt;
     &lt;&lt;audio &quot;introbuzzer&quot; play&gt;&gt;
     &lt;&lt;timed 5s&gt;&gt; Let&#39;s go!
       &lt;&lt;goto [[launch]]&gt;&gt;
