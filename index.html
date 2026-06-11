@@ -945,9 +945,11 @@ You tell him your name. It&#39;s &lt;&lt;textbox &quot;$playerName&quot; &quot;&
 
 &lt;&lt;timed 7s&gt;&gt; You walk home. &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 10s&gt;&gt; When you go to bed, you can&#39;t sleep. &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt; When you go to bed, you can&#39;t sleep. &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 8s&gt;&gt; You lay awake all night, thinking over all the things you&#39;ll do [[next time-&gt;launch]]. &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; You lay awake all night, thinking over all the things you&#39;ll do [[next time-&gt;launch]]. &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 20s&gt;&gt; good luck. &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;timed 1s&gt;&gt;
@@ -1175,7 +1177,7 @@ Your opening story text goes here. It will remain visible beneath the overlay.
 [[ensure you win]]
 &lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="54" name="let the other team win" tags="" position="850,3325" size="100,100">&lt;h2&gt; You decide to let the other team win, because you don&#39;t want to be unpopular. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="54" name="let the other team win" tags="" position="850,3325" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to let the other team win, because you don&#39;t want to be unpopular. &lt;/h2&gt;
 
 &lt;&lt;timed 6s&gt;&gt; You are drunk from chugging down loser drinks. It tastes like failure. Like you. &lt;&lt;/timed&gt;&gt;
 
@@ -1183,15 +1185,55 @@ Your opening story text goes here. It will remain visible beneath the overlay.
 
 &lt;&lt;timed 15s&gt;&gt; Now your one reedeeming trait is useless because everyone thinks you are bad. &lt;&lt;linkappend &quot;Which you are.&quot;&gt;&gt; To your absolute core. &lt;&lt;/linkappend&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
-Things are bad enough. You should just
-[[give up now and just go home]] </tw-passagedata><tw-passagedata pid="55" name="ensure you win" tags="" position="1125,3275" size="100,100">&lt;h2&gt; You decide to win, because you don&#39;t want to be a freak and a loser.. &lt;/h2&gt;
+
+&lt;&lt;timed 10s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
+
+&lt;body2&gt; 
+&lt;&lt;timed 50s&gt;&gt; You have to get out of here. 
+&lt;/body2&gt;
+&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
+</tw-passagedata><tw-passagedata pid="55" name="ensure you win" tags="" position="1125,3275" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to win, because you don&#39;t want to be a freak and a loser.. &lt;/h2&gt;
 
 &lt;&lt;timed 6s&gt;&gt; You may have made your teammate happy, but the other team glares at you. &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 11s&gt;&gt; Not only were you no fun to be around, but you beat them, and now stare at them silently. &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 15s&gt;&gt; Seems your one reedeeming trait isn&#39;t enough. Everyone thinks you are a bad person. &lt;&lt;linkappend &quot;Which you are.&quot;&gt;&gt; To your absolute core. &lt;&lt;/linkappend&gt;&gt; &lt;&lt;/timed&gt;&gt;
 
-Things are bad enough. You should just
-[[give up now and just go home]] 
+
+&lt;&lt;timed 10s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
+
+&lt;body2&gt; 
+&lt;&lt;timed 50s&gt;&gt; You have to get out of here. 
+&lt;/body2&gt;
+&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
 </tw-passagedata><tw-passagedata pid="56" name="next time" tags="" position="4325,2725" size="100,100">&lt;&lt;audio distantmusic stop&gt;&gt;/
 &lt;&lt;&lt;&lt;audio housechatter stop&gt;&gt;/
 &lt;&lt;audio crowdyell stop&gt;&gt; /
@@ -1234,7 +1276,7 @@ you&#39;re not so sure you want to do this again, are you? you&#39;re sick of [[
 &lt;&lt;/link&gt;&gt;
 
 &lt;div id=&quot;chaos-overlay&quot;&gt;&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="59" name="stay quiet" tags="Dark ending" position="2575,2850" size="100,100">&lt;h2&gt; You stay quiet, listening into the conversation. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="59" name="stay quiet" tags="Dark ending" position="2575,2850" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt; You stay quiet, listening into the conversation. &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; You only catch glimpses: &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 3s&gt;&gt; Did you hear Michael came over last night? &lt;&lt;/timed&gt;&gt;  
@@ -1246,21 +1288,57 @@ you&#39;re not so sure you want to do this again, are you? you&#39;re sick of [[
 Soon it starts to feel like they&#39;re speaking a whole other language. Just think, focus.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s&gt;&gt;
 Someone looks at you. They asked you a question. &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 8s&gt;&gt; You try to speak, but no words come out. You feel like a freak. it&#39;s time to [[give up now and just go home]] 
-&lt;&lt;/timed&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="60" name="make a joke to make them all laugh" tags="ending" position="2175,3050" size="100,100">&lt;&lt;audio &quot;:playing&quot; volume 0.5&gt;&gt;
+
+&lt;&lt;timed 10s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
+
+&lt;body2&gt; 
+&lt;&lt;timed 50s&gt;&gt; You have to get out of here. 
+&lt;/body2&gt;
+&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+
+</tw-passagedata><tw-passagedata pid="60" name="make a joke to make them all laugh" tags="ending" position="2175,3050" size="100,100"> &lt;&lt;audio &quot;:playing&quot; volume 0.5&gt;&gt;
 &lt;&lt;audio &quot;crickets&quot; play&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;audio &quot;:playing&quot; volume 1&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;h2&gt; You say something incredibly unfunny. &lt;/h2&gt;
+&lt;span id=&quot;vanish&quot;&gt;  &lt;h2&gt; You say something incredibly unfunny. &lt;/h2&gt;
 Nobody laughs!
 
 suddenly, you feel hot.
 So, so very, very very hot. 
 
-you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] 
+&lt;&lt;timed 10s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
 
+&lt;body2&gt;&lt;&lt;timed 50s&gt;&gt;You have to get out of here.&lt;/body2&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
 </tw-passagedata><tw-passagedata pid="61" name="take some vodka" tags="" position="3025,2800" size="100,100">&lt;h2&gt; You approach the vodka like a lame ninja. &lt;&lt;timed 1s&gt;&gt; No one notices you, but only because you&#39;re irrelevant and not worth noticing. &lt;&lt;/timed&gt;&gt; &lt;/h2&gt;
 
 &lt;&lt;timed 3s&gt;&gt; You pick up the vodka, pour some into a cup and chug it down. You crinkle the cup and drop it on the floor like a fucking cool kid. &lt;&lt;/timed&gt;&gt; 
@@ -1287,7 +1365,7 @@ do you know who i am?
 you think for a second... no one is dressed quite like her.
 
 [[i don&#39;t know]]
-[[you&#39;re the birthday girl!]]</tw-passagedata><tw-passagedata pid="63" name="no it&#39;s not" tags="" position="4800,975" size="100,100"></tw-passagedata><tw-passagedata pid="64" name="sorry" tags="" position="4875,1400" size="100,100"></tw-passagedata><tw-passagedata pid="65" name="i don&#39;t know" tags="" position="3100,3125" size="100,100">&lt;h2&gt; She laughs and looks you up and down. You&#39;ve clearly done something wrong. &lt;/h2&gt;
+[[you&#39;re the birthday girl!]]</tw-passagedata><tw-passagedata pid="63" name="no it&#39;s not" tags="" position="4800,975" size="100,100"></tw-passagedata><tw-passagedata pid="64" name="sorry" tags="" position="4875,1400" size="100,100"></tw-passagedata><tw-passagedata pid="65" name="i don&#39;t know" tags="" position="3100,3125" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; She laughs and looks you up and down. You&#39;ve clearly done something wrong. &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; It&#39;s my birthday, dude. &lt;/em&gt;  She says. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Just so you know&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;That was really fucking obvious.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 7s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.2s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.2s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 8.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.6s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;  Rude! Rude! 
@@ -1298,11 +1376,20 @@ you think for a second... no one is dressed quite like her.
 &lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
-&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;/span&gt;
 
-&lt;&lt;timed 10s&gt;&gt;
-you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]]  &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="66" name="you&#39;re the birthday girl!" tags="Dark" position="3275,3075" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; She laughs and looks you up and down. She has no idea who you are. You&#39;ve clearly done something wrong. &lt;/h2&gt; 
+
+&lt;body2&gt;&lt;&lt;timed 50s&gt;&gt;You have to get out of here. &lt;/body2&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="you&#39;re the birthday girl!" tags="Dark" position="3275,3075" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; She laughs and looks you up and down. She has no idea who you are. You&#39;ve clearly done something wrong. &lt;/h2&gt; 
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; How did you know that, dude? &lt;/em&gt;  She says. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Just so you know&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;That was really fucking creepy.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 7s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.2s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.4s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.2s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.4s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 8.8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.4s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.6s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9.8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; 
@@ -1312,11 +1399,20 @@ you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up
 &lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even  doing here? &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt;
-&lt;/span&gt; &lt;&lt;/silently&gt;&gt;
-&lt;&lt;timed 15s&gt;&gt; you&#39;ve had enough of this. you feel like a freak. You can&#39;t breathe. Try to &lt;a href=&quot;Twinefinalboss/index.html&quot; target=&quot;_blank&quot;&gt;breathe&lt;/a&gt; &lt;&lt;/timed&gt;&gt; 
-&lt;&lt;timed 18s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;/silently&gt;&gt;
 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;/span&gt;
 
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;body2&gt;&lt;&lt;timed 50s&gt;&gt;You have to get out of here.&lt;/body2&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
 
 &lt;&lt;timed 9s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 13s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
@@ -1331,22 +1427,41 @@ you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up
 &lt;&lt;timed 31s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHAT ARE YOU GOING TO WEAR?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="get some help" tags="" position="1925,2875" size="100,100">you go outside.
-hey can someone help me in here?
-someone nearby comes in. 
+&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="get some help" tags="" position="1925,2875" size="100,100">&lt;h2&gt;You go outside, and get some help.&lt;/h2&gt;
+Her friend comes in. 
 
-oh, lol, it&#39;s sarah. dude she&#39;s fine. bit of an overreaction. first party, buddy?
+&lt;em&gt; She&#39;s fine, you&#39;re overreacting. What are you even doing in here? &lt;/em&gt; 
 
-you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] 
-</tw-passagedata><tw-passagedata pid="68" name="just leave it alone" tags="" position="2075,2875" size="100,100">you decide to leave her, and find somewhere else to go. 
+[[give up now and just go home]] 
+</tw-passagedata><tw-passagedata pid="68" name="just leave it alone" tags="" position="2075,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to leave her, and find somewhere else to go. &lt;/h2&gt;
 as you exit the bathroom, however, someone looks inside.
 
-dude, sarah&#39;s totally passed out in here!
-man, why didn&#39;t you say anything?
+Why didn&#39;t you say anything?
 
 everyone is looking at you. 
 
-you&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] 
+
+&lt;&lt;timed 10s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
+
+&lt;body2&gt; 
+&lt;&lt;timed 50s&gt;&gt; You have to get out of here. 
+&lt;/body2&gt;
+&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
 </tw-passagedata><tw-passagedata pid="69" name="better option" tags="nicer" position="4875,2800" size="100,100">Someone&#39;s invited you to a party, it&#39;s about the time to get ready, you reckon. You&#39;re pretty keen to go. 
 Would you rather wear:
 
@@ -1442,7 +1557,7 @@ Why &lt;&lt;timed 1s&gt;&gt; are &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
   &lt;&lt;/link&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="78" name="playing this game" tags="" position="4450,2775" size="100,100">if only there was an option, an easy way out, that let you [[turn the thoughts off]]</tw-passagedata><tw-passagedata pid="79" name="sit down" tags="" position="5000,775" size="100,100"></tw-passagedata><tw-passagedata pid="80" name="leave them alone" tags="Dark ending" position="2725,2875" size="100,100">&lt;h2&gt; You turn away and walk back to the living room. Alone. Good one! &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="78" name="playing this game" tags="" position="4450,2775" size="100,100">if only there was an option, an easy way out, that let you [[turn the thoughts off]]</tw-passagedata><tw-passagedata pid="79" name="sit down" tags="" position="5000,775" size="100,100"></tw-passagedata><tw-passagedata pid="80" name="leave them alone" tags="Dark ending" position="2725,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt; You turn away and walk back to the living room. Alone. Good one! &lt;/h2&gt;
 
 You take a few deep breaths.
 
@@ -1456,7 +1571,27 @@ Your phone goes off. your friend has texted you:
 &lt;&lt;timed 4s&gt;&gt; You look over at them. They wave with a smile and laugh. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s&gt;&gt; They&#39;re definetly making fun of you. Suddenly, it feels like EVERYONE is making fun of you. Everyone here is looking at you. 
 
-You&#39;ve had enough of this. you feel like a freak. it&#39;s time to [[give up now and just go home]] &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="sit next to them" tags="Dark" position="2625,2725" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
+
+&lt;&lt;timed 10s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;DON&#39;T PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 15s&gt;&gt; &lt;a href=&quot;https://ahempem.github.io/Twinefinalboss/&quot; target=&quot;_blank&quot;&gt;PANIC&lt;/a&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/span&gt;
+
+&lt;body2&gt; 
+&lt;&lt;timed 50s&gt;&gt; You have to get out of here. 
+&lt;/body2&gt;
+&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 70s&gt;&gt; [[go-&gt;give up now and just go home]] &lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="sit next to them" tags="Dark" position="2625,2725" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
 
 &lt;h2&gt; You sit with a group of people who &lt;&lt;linkprepend &quot;don&#39;t want you there&quot;&gt;&gt; really, really &lt;&lt;/linkprepend&gt;&gt;  &lt;/h2&gt;
 Your friend introduces you &lt;&lt;linkappend &quot;which is a nice thing to do&quot;&gt;&gt; out of pity.  Then, everyone turns to you. 
