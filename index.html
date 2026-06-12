@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Why are you like this?" startnode="42" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="43FBD582-81A9-4C63-8555-DBA7952C6460" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+	<tw-storydata name="Why are you like this?" startnode="41" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="43FBD582-81A9-4C63-8555-DBA7952C6460" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
 
 body {
    font-family: "Google Sans Code", monospace;
@@ -941,29 +941,7 @@ There&#39;s a table with two bottles of vodka. You spot a girl who looks very gl
 &lt;&lt;timed 15s&gt;&gt; You begin the game. While you play, do you:
 [[try to talk to your teammate]]
 [[say nothing to them]] 
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="you choose teams" tags="" position="1125,3000" size="100,100">
-
-Your opening story text goes here. It will remain visible beneath the overlay.
-
-&lt;&lt;silently&gt;&gt;
-  /* Photo 1 appears immediately */
-  &lt;&lt;run showPhoto(&quot;images/photo1.jpg&quot;, 3500)&gt;&gt;
-
-  /* Photo 2 appears at 4 seconds */
-  &lt;&lt;timed 4s&gt;&gt;
-    &lt;&lt;run showPhoto(&quot;images/bedroom.jpg&quot;, 3500)&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-
-  /* Photo 3 appears at 8 seconds */
-  &lt;&lt;timed 8s&gt;&gt;
-    &lt;&lt;run showPhoto(&quot;images/title.jpg&quot;, 3500)&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-
-  /* Photo 4 appears at 12 seconds */
-  &lt;&lt;timed 12s&gt;&gt;
-    &lt;&lt;run showPhoto(&quot;images/pixels.jpg&quot;, 3500)&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="say nothing to them" tags="" position="1050,3125" size="100,100">&lt;h2&gt; You stay silent the entire game. &lt;/h2&gt; 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="say nothing to them" tags="" position="1050,3125" size="100,100">&lt;h2&gt; You stay silent the entire game. &lt;/h2&gt; 
 
 &lt;&lt;timed 2s&gt;&gt; Why won&#39;t you say anything? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Hello?&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;They&#39;re trying to talk to you.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
@@ -986,7 +964,7 @@ Knowing this, you:
 [[ensure you win]]
 &lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="30" name="let the other team win" tags="" position="850,3325" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to let the other team win, because you don&#39;t want to be unpopular. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="29" name="let the other team win" tags="" position="850,3325" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to let the other team win, because you don&#39;t want to be unpopular. &lt;/h2&gt;
 
 &lt;&lt;timed 6s&gt;&gt; You are drunk from chugging down loser drinks. It tastes like failure. Like you. &lt;&lt;/timed&gt;&gt;
 
@@ -1009,7 +987,7 @@ You have to get out of here.
 &lt;&lt;timed 70s&gt;&gt; &lt;&lt;goto [[give up now and just go home]]&gt;&gt; &lt;&lt;/timed&gt;&gt; 
 
 &lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="31" name="ensure you win" tags="" position="1125,3275" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to win, because you don&#39;t want to be a freak and a loser.. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="30" name="ensure you win" tags="" position="1125,3275" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to win, because you don&#39;t want to be a freak and a loser.. &lt;/h2&gt;
 
 &lt;&lt;timed 6s&gt;&gt; You may have made your teammate happy, but the other team glares at you. &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 11s&gt;&gt; Not only were you no fun to be around, but you beat them, and now stare at them silently. &lt;&lt;/timed&gt;&gt;
 
@@ -1037,7 +1015,7 @@ You have to get out of here.
 
 &lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="32" name="stay quiet" tags="Dark ending" position="2575,2850" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt; You stay quiet, listening into the conversation. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="31" name="stay quiet" tags="Dark ending" position="2575,2850" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt; You stay quiet, listening into the conversation. &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; You only catch glimpses: &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 3s&gt;&gt; Did you hear %$^&amp;#**% came over last night? &lt;&lt;/timed&gt;&gt;  
@@ -1069,17 +1047,16 @@ You have to get out of here.
 
 &lt;&lt;timed 10s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;NONE OF THIS MAKES ANY SENSE&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 13s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;YOU HAVE TO GET OUT OF HERE&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 10s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHAT ARE THEY SAYING???&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="make a joke to make them all laugh" tags="ending" position="2175,3050" size="100,100"> &lt;&lt;audio &quot;:playing&quot; volume 0.5&gt;&gt;
-&lt;&lt;audio &quot;crickets&quot; play&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHAT ARE THEY SAYING???&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="make a joke to make them all laugh" tags="ending" position="2175,3050" size="100,100">
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;audio &quot;:playing&quot; volume 1&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;span id=&quot;vanish&quot;&gt;  &lt;h2&gt; You say something incredibly unfunny. &lt;/h2&gt;
 Nobody laughs!
 
-suddenly, you feel hot.
+Suddenly, you feel hot.
 So, so very, very very hot. 
 
-&lt;&lt;timed 10s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 11s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 8s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 12s&gt;&gt; what are you even doing here? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 11s&gt;&gt; What are you &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 12s&gt;&gt; even fucking doing here? &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 12s&gt;&gt; What are you even fucking doing here? &lt;&lt;/timed&gt;&gt; 
@@ -1095,7 +1072,7 @@ So, so very, very very hot.
 &lt;&lt;timed 70s&gt;&gt; &lt;&lt;goto [[give up now and just go home]]&gt;&gt; &lt;&lt;/timed&gt;&gt; 
 
 &lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="34" name="take some vodka" tags="" position="3025,2800" size="100,100">&lt;h2&gt; You approach the vodka like a lame ninja. &lt;&lt;timed 1s&gt;&gt; No one notices you, but only because you&#39;re irrelevant and not worth noticing. &lt;&lt;/timed&gt;&gt; &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="33" name="take some vodka" tags="" position="3025,2800" size="100,100">&lt;h2&gt; You approach the vodka like a lame ninja. &lt;&lt;timed 1s&gt;&gt; No one notices you, but only because you&#39;re irrelevant and not worth noticing. &lt;&lt;/timed&gt;&gt; &lt;/h2&gt;
 
 &lt;&lt;timed 3s&gt;&gt; You pick up the vodka, pour some into a cup and chug it down. You crinkle the cup and drop it on the floor like a fucking cool kid. &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 4s&gt;&gt; You&#39;re feeling slightly better. For a moment, your thoughts calm.... you feel almost &lt;em&gt; confident. &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
@@ -1112,7 +1089,7 @@ So, so very, very very hot.
 
 
 
-</tw-passagedata><tw-passagedata pid="35" name="ask the girl for some" tags="" position="3300,2800" size="100,100">&lt;h2&gt; You approach the girl and bravely ask for some vodka. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="34" name="ask the girl for some" tags="" position="3300,2800" size="100,100">&lt;h2&gt; You approach the girl and bravely ask for some vodka. &lt;/h2&gt;
 
 &lt;&lt;timed 2s&gt;&gt; She turns around and sizes you up. &lt;&lt;/timed&gt;&gt;
 
@@ -1125,7 +1102,7 @@ So, so very, very very hot.
 [[you&#39;re the birthday girl!]] &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 4.2s&gt;&gt; Do you know who they are? Do you? You don&#39;t. Why don&#39;t you? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 5.5s&gt;&gt; Do you know who they are? Do you? You don&#39;t. Why don&#39;t you? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6s&gt;&gt; Do you know who they are? Do you? You don&#39;t. Why don&#39;t you? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7s&gt;&gt; Do you know who they are? Do you? You don&#39;t. Why don&#39;t you? &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="36" name="i don&#39;t know" tags="" position="3100,3125" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; She laughs and looks you up and down. You&#39;ve clearly done something wrong. &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="35" name="i don&#39;t know" tags="" position="3100,3125" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; She laughs and looks you up and down. You&#39;ve clearly done something wrong. &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; It&#39;s my birthday, dude. &lt;/em&gt;  She says. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Just so you know&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;That was really fucking obvious.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 7s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.2s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.2s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 8.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.4s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.6s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9.8s&gt;&gt; Rude! &lt;&lt;/timed&gt;&gt;  Rude! Rude! 
@@ -1148,7 +1125,7 @@ So, so very, very very hot.
 &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 70s&gt;&gt; &lt;&lt;goto [[give up now and just go home]]&gt;&gt; &lt;&lt;/timed&gt;&gt; 
 
-&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="you&#39;re the birthday girl!" tags="Dark" position="3275,3075" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; She laughs and looks you up and down. She has no idea who you are. You&#39;ve clearly done something wrong. &lt;/h2&gt; 
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="you&#39;re the birthday girl!" tags="Dark" position="3275,3075" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; She laughs and looks you up and down. She has no idea who you are. You&#39;ve clearly done something wrong. &lt;/h2&gt; 
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; How did you know that, dude? &lt;/em&gt;  She says. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Just so you know&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;That was really fucking creepy.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 7s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.2s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.4s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7.8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.2s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.4s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 8.8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.4s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 9.6s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 9.8s&gt;&gt; Creep! &lt;&lt;/timed&gt;&gt; 
@@ -1191,9 +1168,9 @@ You have to get out of here.
 &lt;&lt;timed 31s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHAT ARE YOU GOING TO WEAR?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 32s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THERE IS SO MUCH TO WORRY ABOUT&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 33s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WHY ARE YOU LIKE THIS?&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="get some help" tags="" position="1925,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt;You go outside, and look around.&lt;/h2&gt;
+&lt;&lt;timed 40s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;JUST A SUGGESTION&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;GIVE UP NOW&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="get some help" tags="" position="1925,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt;You go outside, and look around.&lt;/h2&gt;
 Who should you ask? 
-&lt;&lt;timed 5s&gt;&gt; You can&#39;t work it out, can you? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6s&gt;&gt; Him, &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6.5s&gt;&gt; her, &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7s&gt;&gt; them...? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; Within everyone, you see the potetntial to be rejected, to get it all wrong, you see their faces contorted. &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt; You can&#39;t work it out, can you? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6s&gt;&gt; Him, &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 6.5s&gt;&gt; her, &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7s&gt;&gt; them...? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8s&gt;&gt; Within everyone, you see the path to be rejected, to get it all wrong, you see their faces contorted. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 9s&gt;&gt; BUT SOMEONE&#39;S LIFE&#39;S ON THE LINE! GET OVER YOURSELF!&lt;&lt;/timed&gt;&gt;&lt;&lt;timed 10s&gt;&gt; You go to the nearest person and tap them on the shoulder. &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 20s&gt;&gt; They stop listening to your ramble and follow you into the bathroom. They take one look at the girl, and kick her. The girl grunts.  &lt;&lt;/timed&gt;&gt;
 
@@ -1217,7 +1194,7 @@ You have to get out of here.
 
 
 &lt;&lt;timed 27s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;SEE?&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;YOU MADE THE WRONG CALL&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 29s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;SEE?&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;YOU OVERREACTED&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="just leave it alone" tags="" position="2075,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to leave her, and find somewhere else to go. &lt;/h2&gt;
+&lt;&lt;timed 29s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;SEE?&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;YOU OVERREACTED&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="just leave it alone" tags="" position="2075,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt; &lt;h2&gt; You decide to leave her, and find somewhere else to go. &lt;/h2&gt;
 As you exit the bathroom, someone looks inside. 
 
 Why didn&#39;t you say anything? You&#39;re a killer. 
@@ -1240,7 +1217,7 @@ You have to get out of here.
 
 &lt;&lt;timed 30s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="40" name="StoryInit" tags="" position="2800,425" size="100,100">
+</tw-passagedata><tw-passagedata pid="39" name="StoryInit" tags="" position="2800,425" size="100,100">
 Macro.add(&#39;error&#39;, {
   handler() {
     const message = this.args[0];
@@ -1266,7 +1243,7 @@ Macro.add(&#39;error&#39;, {
 &lt;&lt;cacheaudio &quot;waitingroom&quot; &quot;audio/waitingroom.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;introbuzzer&quot; &quot;audio/introbuzzer.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;heywhatsup&quot; &quot;audio/heywhatsup.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;givemeamin&quot; &quot;audio/givemeamin.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="something nice" tags="d" position="1775,650" size="100,100">&lt;&lt;silently&gt;&gt; &lt;&lt;audio ticktick volume 0.2&gt;&gt; 
+&lt;&lt;cacheaudio &quot;givemeamin&quot; &quot;audio/givemeamin.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="something nice" tags="d" position="1775,650" size="100,100">&lt;&lt;silently&gt;&gt; &lt;&lt;audio ticktick volume 0.2&gt;&gt; 
 &lt;&lt;audio getchanged play&gt;&gt; &lt;&lt;/silently&gt;&gt;
 &lt;h2&gt; You get changed into your nicest outfit&lt;&lt;timed 1s&gt;&gt; ...and look into the mirror. &lt;&lt;/timed&gt;&gt; &lt;/h2&gt;
 &lt;&lt;timed 2s&gt;&gt; &lt;em&gt; Why do you look like that? &lt;/em&gt; &lt;&lt;/timed&gt;&gt;
@@ -1308,7 +1285,7 @@ why are you like this
     &lt;&lt;run showPhoto(&quot;images/ago3.jpg&quot;, 3500)&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
   
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Untitled Passage 2" tags="title-page" position="2075,250" size="100,100">&lt;&lt;audio &quot;waitingroom&quot; volume 0.5 play&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Home" tags="title-page" position="2075,250" size="100,100">&lt;&lt;audio &quot;waitingroom&quot; volume 0.5 play&gt;&gt;
 
 Why &lt;&lt;timed 1s&gt;&gt; are &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2s&gt;&gt; you &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s&gt;&gt; like &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 4s&gt;&gt; this? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 9s&gt;&gt; &lt;body&gt; by Al Pembroke &lt;/body&gt; &lt;&lt;/timed&gt;&gt;
@@ -1325,7 +1302,7 @@ Why &lt;&lt;timed 1s&gt;&gt; are &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
   &lt;&lt;/link&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="43" name="leave them alone" tags="Dark ending" position="2725,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt; You turn away and walk back to the living room. Alone. Good one! &lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="42" name="leave them alone" tags="Dark ending" position="2725,2875" size="100,100">&lt;span id=&quot;vanish&quot;&gt;&lt;h2&gt; You turn away and walk back to the living room. Alone. Good one! &lt;/h2&gt;
 
 You take a few deep breaths. 
 &lt;&lt;timed 3s&gt;&gt;
@@ -1351,7 +1328,7 @@ Your phone goes off. Your friend has texted you:
 &lt;&lt;timed 38s&gt;&gt;&lt;&lt;run $(&quot;#vanish&quot;).remove()&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 3.5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;text&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;where have you been? kinda rude not to text or come see me, dude. &quot;); Dialog.open();&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="44" name="sit next to them" tags="Dark" position="2625,2725" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
+</tw-passagedata><tw-passagedata pid="43" name="sit next to them" tags="Dark" position="2625,2725" size="100,100">&lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;WRONG CHOICE THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt;
 
 &lt;h2&gt; You sit with a group of people who &lt;&lt;linkprepend &quot;don&#39;t want you there&quot;&gt;&gt; really, really &lt;&lt;/linkprepend&gt;&gt;  &lt;/h2&gt;
 Your friend introduces you &lt;&lt;linkappend &quot;which is a nice thing to do&quot;&gt;&gt; out of pity.  Then, everyone turns to you. 
@@ -1359,7 +1336,7 @@ Your friend introduces you &lt;&lt;linkappend &quot;which is a nice thing to do&
 [[make a joke to make them all laugh]]&lt;&lt;/linkappend&gt;&gt;
 
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Error&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 7s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="suggest the teams yourself" tags="" position="1000,2975" size="100,100">&lt;h2&gt; You choose the teams, as you want to seem decisive and sure of yourself. You&#39;re not. &lt;/h2&gt;
+&lt;&lt;timed 7s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;THEY DON&#39;T WANT YOU HERE!&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="suggest the teams yourself" tags="" position="1000,2975" size="100,100">&lt;h2&gt; You choose the teams, as you want to seem decisive and sure of yourself. You&#39;re not. &lt;/h2&gt;
 
 &lt;&lt;timed 2s&gt;&gt; Who do you think you&#39;re fooling? &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s&gt;&gt; Because it&#39;s not them. &lt;&lt;/timed&gt;&gt;
 
@@ -1370,7 +1347,7 @@ Your friend introduces you &lt;&lt;linkappend &quot;which is a nice thing to do&
 &lt;&lt;timed 11s&gt;&gt; You begin the game. While you play, do you:
 [[try to talk to your teammate]]
 [[say nothing to them]] 
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="try to talk to your teammate" tags="" position="925,3175" size="100,100">&lt;h2&gt; You try to make conversation throughout the entire game. &lt;/h2&gt; 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="try to talk to your teammate" tags="" position="925,3175" size="100,100">&lt;h2&gt; You try to make conversation throughout the entire game. &lt;/h2&gt; 
 
 &lt;&lt;timed 2s&gt;&gt; Why won&#39;t you say anything good? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt; &lt;&lt;run Dialog.setup(&quot;Wrong dialogue option.&quot;, &quot;error-dialog&quot;); Dialog.wiki(&quot;They think you&#39;re really weird.&quot;); Dialog.open();&gt;&gt; &lt;&lt;/timed&gt;&gt;
@@ -1393,11 +1370,12 @@ Your friend introduces you &lt;&lt;linkappend &quot;which is a nice thing to do&
 [[ensure you win]]
 &lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="47" name="something downbeat" tags="" position="1850,1200" size="100,100">&lt;&lt;silently&gt;&gt; &lt;&lt;audio &quot;heartandbreathe&quot; stop&gt;&gt;  &lt;&lt;audio &quot;somethingsad&quot; play&gt;&gt; &lt;&lt;/silently&gt;&gt;
+</tw-passagedata><tw-passagedata pid="46" name="something downbeat" tags="" position="1850,1200" size="100,100">&lt;&lt;silently&gt;&gt; &lt;&lt;audio &quot;heartandbreathe&quot; stop&gt;&gt;  &lt;&lt;audio &quot;somethingsad&quot; play&gt;&gt; &lt;&lt;/silently&gt;&gt;
 &lt;h2&gt; You play a mellow tune that reminds you of your inner failings. &lt;/h2&gt;
 &lt;&lt;timed 28s&gt;&gt; You see a text from your friend that you should probably
 &lt;em&gt; [[open]] &lt;/em&gt; &lt;&lt;/timed&gt;&gt; 
-&lt;&lt;timed 3s&gt;&gt; of which there are so so so so so very many. &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 4s&gt;&gt; Shall we list them? &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 5s&gt;&gt; 1. You&#39;re not good enough at literally anything. Name one talent. What, beer pong? &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt; of which there are so so so so so very many. &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 4s&gt;&gt; Shall we list them? &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 5s&gt;&gt; 
+1. You&#39;re not good enough at literally anything. Name one talent. What, beer pong? &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s&gt;&gt; 2. You&#39;re too quiet and boring to be around. &lt;&lt;/timed&gt;&gt;&lt;&lt;timed 6.5s&gt;&gt;When you do speak, you&#39;re far too serious. &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 8s&gt;&gt; 3. You always say the wrong thing. &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 8.5s&gt;&gt; Remember that time you told someone a your mum joke and their mum just died? &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 10s&gt;&gt; 4. You&#39;re not smart enough to keep up with people. &lt;&lt;/timed&gt;&gt;
